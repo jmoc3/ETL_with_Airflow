@@ -1,0 +1,33 @@
+[2024-02-06T23:02:27.088+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.users_table manual__2024-02-06T23:01:45.347640+00:00 [queued]>
+[2024-02-06T23:02:27.146+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.users_table manual__2024-02-06T23:01:45.347640+00:00 [queued]>
+[2024-02-06T23:02:27.148+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 6
+[2024-02-06T23:02:27.213+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): users_table> on 2024-02-06 23:01:45.347640+00:00
+[2024-02-06T23:02:27.228+0000] {standard_task_runner.py:60} INFO - Started process 488 to run task
+[2024-02-06T23:02:27.232+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Read_and_load_of_API_to_MySQLDB', 'users_table', 'manual__2024-02-06T23:01:45.347640+00:00', '--job-id', '205', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmp09s7vwx0']
+[2024-02-06T23:02:27.252+0000] {standard_task_runner.py:88} INFO - Job 205: Subtask users_table
+[2024-02-06T23:02:27.524+0000] {task_command.py:423} INFO - Running <TaskInstance: Read_and_load_of_API_to_MySQLDB.users_table manual__2024-02-06T23:01:45.347640+00:00 [running]> on host 1518ce13a9bd
+[2024-02-06T23:02:27.992+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='Read_and_load_of_API_to_MySQLDB' AIRFLOW_CTX_TASK_ID='users_table' AIRFLOW_CTX_EXECUTION_DATE='2024-02-06T23:01:45.347640+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-02-06T23:01:45.347640+00:00'
+[2024-02-06T23:02:28.061+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T23:02:28.239+0000] {sql.py:450} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS ***_PI.users(
+              id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+              name VARCHAR(25) NOT NULL,
+              username VARCHAR(25) NOT NULL,
+              email VARCHAR(255) NOT NULL UNIQUE,
+              address VARCHAR(50),
+              city_id INT,
+              zipcode VARCHAR(10),
+              latitud VARCHAR(20),
+              longitud VARCHAR(20),
+              phone VARCHAR(15),
+              website VARCHAR(50),
+              company_id INT,
+              FOREIGN KEY (city_id) REFERENCES cities(id),
+              FOREIGN KEY (company_id) REFERENCES companies(id)
+            )
+            , parameters: None
+[2024-02-06T23:02:28.982+0000] {sql.py:459} INFO - Rows affected: 0
+[2024-02-06T23:02:28.985+0000] {python.py:201} INFO - Done. Returned value was: None
+[2024-02-06T23:02:29.027+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=Read_and_load_of_API_to_MySQLDB, task_id=users_table, execution_date=20240206T230145, start_date=20240206T230227, end_date=20240206T230229
+[2024-02-06T23:02:29.107+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-06T23:02:29.211+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

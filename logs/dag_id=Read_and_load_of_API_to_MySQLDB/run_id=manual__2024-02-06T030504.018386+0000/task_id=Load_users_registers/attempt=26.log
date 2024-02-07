@@ -1,0 +1,46 @@
+[2024-02-06T19:27:05.180+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_users_registers manual__2024-02-06T03:05:04.018386+00:00 [queued]>
+[2024-02-06T19:27:05.224+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_users_registers manual__2024-02-06T03:05:04.018386+00:00 [queued]>
+[2024-02-06T19:27:05.226+0000] {taskinstance.py:2170} INFO - Starting attempt 26 of 31
+[2024-02-06T19:27:05.265+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): Load_users_registers> on 2024-02-06 03:05:04.018386+00:00
+[2024-02-06T19:27:05.280+0000] {standard_task_runner.py:60} INFO - Started process 1136 to run task
+[2024-02-06T19:27:05.285+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Read_and_load_of_API_to_MySQLDB', 'Load_users_registers', 'manual__2024-02-06T03:05:04.018386+00:00', '--job-id', '195', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmphwccfdbv']
+[2024-02-06T19:27:05.289+0000] {standard_task_runner.py:88} INFO - Job 195: Subtask Load_users_registers
+[2024-02-06T19:27:05.375+0000] {task_command.py:423} INFO - Running <TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_users_registers manual__2024-02-06T03:05:04.018386+00:00 [running]> on host 648978c3a8b9
+[2024-02-06T19:27:05.564+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='Read_and_load_of_API_to_MySQLDB' AIRFLOW_CTX_TASK_ID='Load_users_registers' AIRFLOW_CTX_EXECUTION_DATE='2024-02-06T03:05:04.018386+00:00' AIRFLOW_CTX_TRY_NUMBER='26' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-02-06T03:05:04.018386+00:00'
+[2024-02-06T19:27:05.603+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T19:27:05.633+0000] {sql.py:450} INFO - Running statement: SELECT id FROM ***_PI.cities WHERE name = 'Gwenborough', parameters: None
+[2024-02-06T19:27:05.636+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T19:27:05.657+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T19:27:05.668+0000] {sql.py:450} INFO - Running statement: SELECT id FROM ***_PI.companies WHERE name = 'Romaguera-Crona', parameters: None
+[2024-02-06T19:27:05.672+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T19:27:05.686+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T19:27:05.697+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO ***_PI.users(name, username, email, address, city_id, zipcode, latitud, longitud, phone, website, company_id) VALUES ('Leanne Graham','Bret','Sincere@april.biz','Kulas Light Apt. 556','(3,)','92998-3874','-37.3159','81.1496','1-770-736-8031 x56442','hildegard.org','1',), parameters: None
+[2024-02-06T19:27:05.702+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 241, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/CRM.py", line 93, in Load_users_registers
+    user_register.save()
+  File "/opt/airflow/dags/models/User.py", line 22, in save
+    hook.run(mysql_statement)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 398, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 455, in _run_command
+    cur.execute(sql_statement)
+  File "/home/airflow/.local/lib/python3.8/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/home/airflow/.local/lib/python3.8/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+  File "/home/airflow/.local/lib/python3.8/site-packages/MySQLdb/connections.py", line 257, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1")
+[2024-02-06T19:27:05.728+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=Read_and_load_of_API_to_MySQLDB, task_id=Load_users_registers, execution_date=20240206T030504, start_date=20240206T192705, end_date=20240206T192705
+[2024-02-06T19:27:05.758+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 195 for task Load_users_registers ((1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1"); 1136)
+[2024-02-06T19:27:05.786+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-02-06T19:27:05.826+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,1 @@
+[2024-02-02T02:30:23.570+0000] {scheduler_job_runner.py:781} ERROR - Executor reports task instance <TaskInstance: Read_and_load_of_API_to_MySQLDB.Companies_table_Creation manual__2024-02-02T02:25:19.171007+00:00 [queued]> finished (failed) although the task says it's queued. (Info: None) Was the task killed externally?

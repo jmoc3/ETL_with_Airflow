@@ -1,0 +1,31 @@
+[2024-02-01T22:59:44.921+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Database_Creation manual__2024-02-01T22:59:41.672097+00:00 [queued]>
+[2024-02-01T22:59:44.958+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Database_Creation manual__2024-02-01T22:59:41.672097+00:00 [queued]>
+[2024-02-01T22:59:44.959+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 6
+[2024-02-01T22:59:45.038+0000] {taskinstance.py:2191} INFO - Executing <Task(MySqlOperator): Database_Creation> on 2024-02-01 22:59:41.672097+00:00
+[2024-02-01T22:59:45.059+0000] {standard_task_runner.py:60} INFO - Started process 1050 to run task
+[2024-02-01T22:59:45.069+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Read_and_load_of_API_to_MySQLDB', 'Database_Creation', 'manual__2024-02-01T22:59:41.672097+00:00', '--job-id', '28', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmpou8hoom9']
+[2024-02-01T22:59:45.083+0000] {standard_task_runner.py:88} INFO - Job 28: Subtask Database_Creation
+[2024-02-01T22:59:45.249+0000] {task_command.py:423} INFO - Running <TaskInstance: Read_and_load_of_API_to_MySQLDB.Database_Creation manual__2024-02-01T22:59:41.672097+00:00 [running]> on host bc395ba61919
+[2024-02-01T22:59:45.842+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='Read_and_load_of_API_to_MySQLDB' AIRFLOW_CTX_TASK_ID='Database_Creation' AIRFLOW_CTX_EXECUTION_DATE='2024-02-01T22:59:41.672097+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-02-01T22:59:41.672097+00:00'
+[2024-02-01T22:59:45.844+0000] {sql.py:276} INFO - Executing: CREATE DATABASE IF NOT EXISTS ***_PI
+[2024-02-01T22:59:46.011+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-01T22:59:46.217+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-01T22:59:46.823+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/operators/sql.py", line 282, in execute
+    output = hook.run(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 391, in run
+    with closing(self.get_conn()) as conn:
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/mysql/hooks/mysql.py", line 195, in get_conn
+    return MySQLdb.connect(**conn_config)
+  File "/home/airflow/.local/lib/python3.8/site-packages/MySQLdb/__init__.py", line 121, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super().__init__(*args, **kwargs2)
+MySQLdb.OperationalError: (1045, "Access denied for user 'root'@'172.21.0.7' (using password: YES)")
+[2024-02-01T22:59:47.793+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=Read_and_load_of_API_to_MySQLDB, task_id=Database_Creation, execution_date=20240201T225941, start_date=20240201T225944, end_date=20240201T225947
+[2024-02-01T22:59:47.920+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 28 for task Database_Creation ((1045, "Access denied for user 'root'@'172.21.0.7' (using password: YES)"); 1050)
+[2024-02-01T22:59:48.128+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-02-01T22:59:48.712+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

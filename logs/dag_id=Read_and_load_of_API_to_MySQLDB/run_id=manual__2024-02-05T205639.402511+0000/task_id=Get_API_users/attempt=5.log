@@ -1,0 +1,26 @@
+[2024-02-05T20:59:47.890+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Get_API_users manual__2024-02-05T20:56:39.402511+00:00 [queued]>
+[2024-02-05T20:59:47.914+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Get_API_users manual__2024-02-05T20:56:39.402511+00:00 [queued]>
+[2024-02-05T20:59:47.915+0000] {taskinstance.py:2170} INFO - Starting attempt 5 of 10
+[2024-02-05T20:59:47.988+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): Get_API_users> on 2024-02-05 20:56:39.402511+00:00
+[2024-02-05T20:59:47.997+0000] {standard_task_runner.py:60} INFO - Started process 1300 to run task
+[2024-02-05T20:59:48.001+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Read_and_load_of_API_to_MySQLDB', 'Get_API_users', 'manual__2024-02-05T20:56:39.402511+00:00', '--job-id', '80', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmp7ys3_d1m']
+[2024-02-05T20:59:48.006+0000] {standard_task_runner.py:88} INFO - Job 80: Subtask Get_API_users
+[2024-02-05T20:59:48.142+0000] {task_command.py:423} INFO - Running <TaskInstance: Read_and_load_of_API_to_MySQLDB.Get_API_users manual__2024-02-05T20:56:39.402511+00:00 [running]> on host 648978c3a8b9
+[2024-02-05T20:59:48.552+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='Read_and_load_of_API_to_MySQLDB' AIRFLOW_CTX_TASK_ID='Get_API_users' AIRFLOW_CTX_EXECUTION_DATE='2024-02-05T20:56:39.402511+00:00' AIRFLOW_CTX_TRY_NUMBER='5' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-02-05T20:56:39.402511+00:00'
+[2024-02-05T20:59:49.203+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 241, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/CRM.py", line 59, in Get_API_users
+    print(x['address'].city)
+AttributeError: 'dict' object has no attribute 'city'
+[2024-02-05T20:59:49.236+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=Read_and_load_of_API_to_MySQLDB, task_id=Get_API_users, execution_date=20240205T205639, start_date=20240205T205947, end_date=20240205T205949
+[2024-02-05T20:59:49.287+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 80 for task Get_API_users ('dict' object has no attribute 'city'; 1300)
+[2024-02-05T20:59:49.337+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-02-05T20:59:49.389+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,44 @@
+[2024-02-06T03:05:28.500+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_companies_registers manual__2024-02-06T03:05:04.018386+00:00 [queued]>
+[2024-02-06T03:05:28.583+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_companies_registers manual__2024-02-06T03:05:04.018386+00:00 [queued]>
+[2024-02-06T03:05:28.585+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 6
+[2024-02-06T03:05:28.854+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): Load_companies_registers> on 2024-02-06 03:05:04.018386+00:00
+[2024-02-06T03:05:28.911+0000] {standard_task_runner.py:60} INFO - Started process 1391 to run task
+[2024-02-06T03:05:29.223+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Read_and_load_of_API_to_MySQLDB', 'Load_companies_registers', 'manual__2024-02-06T03:05:04.018386+00:00', '--job-id', '140', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmpxsyf2l8i']
+[2024-02-06T03:05:29.263+0000] {standard_task_runner.py:88} INFO - Job 140: Subtask Load_companies_registers
+[2024-02-06T03:05:30.063+0000] {task_command.py:423} INFO - Running <TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_companies_registers manual__2024-02-06T03:05:04.018386+00:00 [running]> on host 648978c3a8b9
+[2024-02-06T03:05:30.786+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='Read_and_load_of_API_to_MySQLDB' AIRFLOW_CTX_TASK_ID='Load_companies_registers' AIRFLOW_CTX_EXECUTION_DATE='2024-02-06T03:05:04.018386+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-02-06T03:05:04.018386+00:00'
+[2024-02-06T03:05:30.967+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T03:05:31.078+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO ***_PI.companies(name, catchPhrase, bs) VALUES ('Romaguera-Crona','Multi-layered client-server neural-net', 'harness real-time e-markets'), parameters: None
+[2024-02-06T03:05:31.097+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T03:05:31.213+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T03:05:31.253+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO ***_PI.companies(name, catchPhrase, bs) VALUES ('Deckow-Crist','Proactive didactic contingency', 'synergize scalable supply-chains'), parameters: None
+[2024-02-06T03:05:31.272+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T03:05:31.319+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T03:05:31.373+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO ***_PI.companies(name, catchPhrase, bs) VALUES ('Romaguera-Jacobson','Face to face bifurcated interface', 'e-enable strategic applications'), parameters: None
+[2024-02-06T03:05:31.382+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T03:05:31.432+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T03:05:31.456+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO ***_PI.companies(name, catchPhrase, bs) VALUES ('Robel-Corkery','Multi-tiered zero tolerance productivity', 'transition cutting-edge web services'), parameters: None
+[2024-02-06T03:05:31.465+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T03:05:31.500+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T03:05:31.519+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO ***_PI.companies(name, catchPhrase, bs) VALUES ('Keebler LLC','User-centric fault-tolerant solution', 'revolutionize end-to-end systems'), parameters: None
+[2024-02-06T03:05:31.526+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T03:05:31.584+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T03:05:31.597+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO ***_PI.companies(name, catchPhrase, bs) VALUES ('Considine-Lockman','Synchronised bottom-line interface', 'e-enable innovative applications'), parameters: None
+[2024-02-06T03:05:31.600+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T03:05:31.634+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T03:05:31.668+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO ***_PI.companies(name, catchPhrase, bs) VALUES ('Johns Group','Configurable multimedia task-force', 'generate enterprise e-tailers'), parameters: None
+[2024-02-06T03:05:31.676+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T03:05:31.708+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T03:05:31.723+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO ***_PI.companies(name, catchPhrase, bs) VALUES ('Abernathy Group','Implemented secondary concept', 'e-enable extensible e-tailers'), parameters: None
+[2024-02-06T03:05:31.727+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T03:05:31.754+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T03:05:31.764+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO ***_PI.companies(name, catchPhrase, bs) VALUES ('Yost and Sons','Switchable contextually-based project', 'aggregate real-time technologies'), parameters: None
+[2024-02-06T03:05:31.768+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T03:05:31.820+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T03:05:31.839+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO ***_PI.companies(name, catchPhrase, bs) VALUES ('Hoeger LLC','Centralized empowering task-force', 'target end-to-end models'), parameters: None
+[2024-02-06T03:05:31.844+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T03:05:31.859+0000] {logging_mixin.py:188} INFO - [{'name': 'Romaguera-Crona', 'catchPhrase': 'Multi-layered client-server neural-net', 'bs': 'harness real-time e-markets'}, {'name': 'Deckow-Crist', 'catchPhrase': 'Proactive didactic contingency', 'bs': 'synergize scalable supply-chains'}, {'name': 'Romaguera-Jacobson', 'catchPhrase': 'Face to face bifurcated interface', 'bs': 'e-enable strategic applications'}, {'name': 'Robel-Corkery', 'catchPhrase': 'Multi-tiered zero tolerance productivity', 'bs': 'transition cutting-edge web services'}, {'name': 'Keebler LLC', 'catchPhrase': 'User-centric fault-tolerant solution', 'bs': 'revolutionize end-to-end systems'}, {'name': 'Considine-Lockman', 'catchPhrase': 'Synchronised bottom-line interface', 'bs': 'e-enable innovative applications'}, {'name': 'Johns Group', 'catchPhrase': 'Configurable multimedia task-force', 'bs': 'generate enterprise e-tailers'}, {'name': 'Abernathy Group', 'catchPhrase': 'Implemented secondary concept', 'bs': 'e-enable extensible e-tailers'}, {'name': 'Yost and Sons', 'catchPhrase': 'Switchable contextually-based project', 'bs': 'aggregate real-time technologies'}, {'name': 'Hoeger LLC', 'catchPhrase': 'Centralized empowering task-force', 'bs': 'target end-to-end models'}]
+[2024-02-06T03:05:31.860+0000] {python.py:201} INFO - Done. Returned value was: None
+[2024-02-06T03:05:31.889+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=Read_and_load_of_API_to_MySQLDB, task_id=Load_companies_registers, execution_date=20240206T030504, start_date=20240206T030528, end_date=20240206T030531
+[2024-02-06T03:05:31.997+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-06T03:05:32.053+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

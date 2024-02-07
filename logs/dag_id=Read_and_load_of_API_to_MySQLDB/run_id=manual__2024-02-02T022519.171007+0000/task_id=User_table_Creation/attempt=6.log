@@ -1,0 +1,68 @@
+[2024-02-02T02:36:57.623+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.User_table_Creation manual__2024-02-02T02:25:19.171007+00:00 [queued]>
+[2024-02-02T02:36:57.685+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.User_table_Creation manual__2024-02-02T02:25:19.171007+00:00 [queued]>
+[2024-02-02T02:36:57.688+0000] {taskinstance.py:2170} INFO - Starting attempt 6 of 6
+[2024-02-02T02:36:57.830+0000] {taskinstance.py:2191} INFO - Executing <Task(MySqlOperator): User_table_Creation> on 2024-02-02 02:25:19.171007+00:00
+[2024-02-02T02:36:57.869+0000] {standard_task_runner.py:60} INFO - Started process 4833 to run task
+[2024-02-02T02:36:57.893+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Read_and_load_of_API_to_MySQLDB', 'User_table_Creation', 'manual__2024-02-02T02:25:19.171007+00:00', '--job-id', '58', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmpputrsn36']
+[2024-02-02T02:36:57.909+0000] {standard_task_runner.py:88} INFO - Job 58: Subtask User_table_Creation
+[2024-02-02T02:36:58.248+0000] {task_command.py:423} INFO - Running <TaskInstance: Read_and_load_of_API_to_MySQLDB.User_table_Creation manual__2024-02-02T02:25:19.171007+00:00 [running]> on host 648978c3a8b9
+[2024-02-02T02:36:58.785+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='Read_and_load_of_API_to_MySQLDB' AIRFLOW_CTX_TASK_ID='User_table_Creation' AIRFLOW_CTX_EXECUTION_DATE='2024-02-02T02:25:19.171007+00:00' AIRFLOW_CTX_TRY_NUMBER='6' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-02-02T02:25:19.171007+00:00'
+[2024-02-02T02:36:58.788+0000] {sql.py:276} INFO - Executing: 
+            CREATE TABLE IF NOT EXISTS users(
+              id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+              name VARCHAR(25) NOT NULL,
+              username VARCHAR(25) NOT NULL,
+              email VARCHAR(255) NOT NULL,
+              address VARCHAR(50),
+              city_id INT,
+              zipcode VARCHAR(10),
+              latitud VARCHAR(20),
+              longitud VARCHAR(20),
+              phone VARCHAR(15),
+              website VARCHAR(50),
+              company_id INT,
+              FOREIGN KEY (city_id) REFERENCES cities(id),
+              FOREIGN KEY (company_id_id) REFERENCES companies(id)
+            )
+            
+[2024-02-02T02:36:58.839+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-02T02:36:58.934+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-02T02:36:59.515+0000] {sql.py:450} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS users(
+              id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+              name VARCHAR(25) NOT NULL,
+              username VARCHAR(25) NOT NULL,
+              email VARCHAR(255) NOT NULL,
+              address VARCHAR(50),
+              city_id INT,
+              zipcode VARCHAR(10),
+              latitud VARCHAR(20),
+              longitud VARCHAR(20),
+              phone VARCHAR(15),
+              website VARCHAR(50),
+              company_id INT,
+              FOREIGN KEY (city_id) REFERENCES cities(id),
+              FOREIGN KEY (company_id_id) REFERENCES companies(id)
+            )
+            , parameters: None
+[2024-02-02T02:36:59.909+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/operators/sql.py", line 282, in execute
+    output = hook.run(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 398, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 455, in _run_command
+    cur.execute(sql_statement)
+  File "/home/airflow/.local/lib/python3.8/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/home/airflow/.local/lib/python3.8/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+  File "/home/airflow/.local/lib/python3.8/site-packages/MySQLdb/connections.py", line 257, in query
+    _mysql.connection.query(self, query)
+MySQLdb.OperationalError: (1072, "Key column 'company_id_id' doesn't exist in table")
+[2024-02-02T02:37:00.251+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=Read_and_load_of_API_to_MySQLDB, task_id=User_table_Creation, execution_date=20240202T022519, start_date=20240202T023657, end_date=20240202T023700
+[2024-02-02T02:37:00.423+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 58 for task User_table_Creation ((1072, "Key column 'company_id_id' doesn't exist in table"); 4833)
+[2024-02-02T02:37:00.542+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-02-02T02:37:00.936+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,26 @@
+[2024-02-07T02:22:54.422+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_API_posts manual__2024-02-06T23:01:45.347640+00:00 [queued]>
+[2024-02-07T02:22:54.442+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_API_posts manual__2024-02-06T23:01:45.347640+00:00 [queued]>
+[2024-02-07T02:22:54.443+0000] {taskinstance.py:2170} INFO - Starting attempt 14 of 19
+[2024-02-07T02:22:54.474+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): Load_API_posts> on 2024-02-06 23:01:45.347640+00:00
+[2024-02-07T02:22:54.481+0000] {standard_task_runner.py:60} INFO - Started process 659 to run task
+[2024-02-07T02:22:54.487+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Read_and_load_of_API_to_MySQLDB', 'Load_API_posts', 'manual__2024-02-06T23:01:45.347640+00:00', '--job-id', '225', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmpuoini3bm']
+[2024-02-07T02:22:54.491+0000] {standard_task_runner.py:88} INFO - Job 225: Subtask Load_API_posts
+[2024-02-07T02:22:54.571+0000] {task_command.py:423} INFO - Running <TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_API_posts manual__2024-02-06T23:01:45.347640+00:00 [running]> on host 1518ce13a9bd
+[2024-02-07T02:22:54.745+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='Read_and_load_of_API_to_MySQLDB' AIRFLOW_CTX_TASK_ID='Load_API_posts' AIRFLOW_CTX_EXECUTION_DATE='2024-02-06T23:01:45.347640+00:00' AIRFLOW_CTX_TRY_NUMBER='14' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-02-06T23:01:45.347640+00:00'
+[2024-02-07T02:22:55.111+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 241, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/CRM.py", line 99, in Load_API_posts
+    hook.set_key('posts',res)
+AttributeError: 'RedisHook' object has no attribute 'set_key'
+[2024-02-07T02:22:55.140+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=Read_and_load_of_API_to_MySQLDB, task_id=Load_API_posts, execution_date=20240206T230145, start_date=20240207T022254, end_date=20240207T022255
+[2024-02-07T02:22:55.168+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 225 for task Load_API_posts ('RedisHook' object has no attribute 'set_key'; 659)
+[2024-02-07T02:22:55.225+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-02-07T02:22:55.263+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

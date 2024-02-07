@@ -1,0 +1,24 @@
+[2024-02-05T20:59:26.445+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Get_API_users manual__2024-02-05T20:56:39.402511+00:00 [queued]>
+[2024-02-05T20:59:26.469+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Get_API_users manual__2024-02-05T20:56:39.402511+00:00 [queued]>
+[2024-02-05T20:59:26.470+0000] {taskinstance.py:2170} INFO - Starting attempt 4 of 9
+[2024-02-05T20:59:26.501+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): Get_API_users> on 2024-02-05 20:56:39.402511+00:00
+[2024-02-05T20:59:26.509+0000] {standard_task_runner.py:60} INFO - Started process 1287 to run task
+[2024-02-05T20:59:26.538+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Read_and_load_of_API_to_MySQLDB', 'Get_API_users', 'manual__2024-02-05T20:56:39.402511+00:00', '--job-id', '79', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmplszchkr9']
+[2024-02-05T20:59:26.542+0000] {standard_task_runner.py:88} INFO - Job 79: Subtask Get_API_users
+[2024-02-05T20:59:26.763+0000] {task_command.py:423} INFO - Running <TaskInstance: Read_and_load_of_API_to_MySQLDB.Get_API_users manual__2024-02-05T20:56:39.402511+00:00 [running]> on host 648978c3a8b9
+[2024-02-05T20:59:26.974+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='Read_and_load_of_API_to_MySQLDB' AIRFLOW_CTX_TASK_ID='Get_API_users' AIRFLOW_CTX_EXECUTION_DATE='2024-02-05T20:56:39.402511+00:00' AIRFLOW_CTX_TRY_NUMBER='4' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-02-05T20:56:39.402511+00:00'
+[2024-02-05T20:59:27.342+0000] {logging_mixin.py:188} INFO - {'street': 'Kulas Light', 'suite': 'Apt. 556', 'city': 'Gwenborough', 'zipcode': '92998-3874', 'geo': {'lat': '-37.3159', 'lng': '81.1496'}}
+[2024-02-05T20:59:27.345+0000] {logging_mixin.py:188} INFO - {'street': 'Victor Plains', 'suite': 'Suite 879', 'city': 'Wisokyburgh', 'zipcode': '90566-7771', 'geo': {'lat': '-43.9509', 'lng': '-34.4618'}}
+[2024-02-05T20:59:27.349+0000] {logging_mixin.py:188} INFO - {'street': 'Douglas Extension', 'suite': 'Suite 847', 'city': 'McKenziehaven', 'zipcode': '59590-4157', 'geo': {'lat': '-68.6102', 'lng': '-47.0653'}}
+[2024-02-05T20:59:27.350+0000] {logging_mixin.py:188} INFO - {'street': 'Hoeger Mall', 'suite': 'Apt. 692', 'city': 'South Elvis', 'zipcode': '53919-4257', 'geo': {'lat': '29.4572', 'lng': '-164.2990'}}
+[2024-02-05T20:59:27.351+0000] {logging_mixin.py:188} INFO - {'street': 'Skiles Walks', 'suite': 'Suite 351', 'city': 'Roscoeview', 'zipcode': '33263', 'geo': {'lat': '-31.8129', 'lng': '62.5342'}}
+[2024-02-05T20:59:27.351+0000] {logging_mixin.py:188} INFO - {'street': 'Norberto Crossing', 'suite': 'Apt. 950', 'city': 'South Christy', 'zipcode': '23505-1337', 'geo': {'lat': '-71.4197', 'lng': '71.7478'}}
+[2024-02-05T20:59:27.352+0000] {logging_mixin.py:188} INFO - {'street': 'Rex Trail', 'suite': 'Suite 280', 'city': 'Howemouth', 'zipcode': '58804-1099', 'geo': {'lat': '24.8918', 'lng': '21.8984'}}
+[2024-02-05T20:59:27.353+0000] {logging_mixin.py:188} INFO - {'street': 'Ellsworth Summit', 'suite': 'Suite 729', 'city': 'Aliyaview', 'zipcode': '45169', 'geo': {'lat': '-14.3990', 'lng': '-120.7677'}}
+[2024-02-05T20:59:27.353+0000] {logging_mixin.py:188} INFO - {'street': 'Dayna Park', 'suite': 'Suite 449', 'city': 'Bartholomebury', 'zipcode': '76495-3109', 'geo': {'lat': '24.6463', 'lng': '-168.8889'}}
+[2024-02-05T20:59:27.354+0000] {logging_mixin.py:188} INFO - {'street': 'Kattie Turnpike', 'suite': 'Suite 198', 'city': 'Lebsackbury', 'zipcode': '31428-2261', 'geo': {'lat': '-38.2386', 'lng': '57.2232'}}
+[2024-02-05T20:59:27.355+0000] {logging_mixin.py:188} INFO - set()
+[2024-02-05T20:59:27.356+0000] {python.py:201} INFO - Done. Returned value was: None
+[2024-02-05T20:59:27.377+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=Read_and_load_of_API_to_MySQLDB, task_id=Get_API_users, execution_date=20240205T205639, start_date=20240205T205926, end_date=20240205T205927
+[2024-02-05T20:59:27.452+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-05T20:59:27.502+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

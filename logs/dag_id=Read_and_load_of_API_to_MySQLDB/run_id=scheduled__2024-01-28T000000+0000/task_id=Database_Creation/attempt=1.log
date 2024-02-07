@@ -1,0 +1,17 @@
+[2024-02-05T20:11:01.364+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Database_Creation scheduled__2024-01-28T00:00:00+00:00 [queued]>
+[2024-02-05T20:11:01.395+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Database_Creation scheduled__2024-01-28T00:00:00+00:00 [queued]>
+[2024-02-05T20:11:01.399+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 6
+[2024-02-05T20:11:01.450+0000] {taskinstance.py:2191} INFO - Executing <Task(MySqlOperator): Database_Creation> on 2024-01-28 00:00:00+00:00
+[2024-02-05T20:11:01.466+0000] {standard_task_runner.py:60} INFO - Started process 181 to run task
+[2024-02-05T20:11:01.479+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Read_and_load_of_API_to_MySQLDB', 'Database_Creation', 'scheduled__2024-01-28T00:00:00+00:00', '--job-id', '63', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmp48sxt_1f']
+[2024-02-05T20:11:01.482+0000] {standard_task_runner.py:88} INFO - Job 63: Subtask Database_Creation
+[2024-02-05T20:11:01.629+0000] {task_command.py:423} INFO - Running <TaskInstance: Read_and_load_of_API_to_MySQLDB.Database_Creation scheduled__2024-01-28T00:00:00+00:00 [running]> on host 648978c3a8b9
+[2024-02-05T20:11:02.039+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='Read_and_load_of_API_to_MySQLDB' AIRFLOW_CTX_TASK_ID='Database_Creation' AIRFLOW_CTX_EXECUTION_DATE='2024-01-28T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-01-28T00:00:00+00:00'
+[2024-02-05T20:11:02.042+0000] {sql.py:276} INFO - Executing: CREATE DATABASE IF NOT EXISTS ***_PI
+[2024-02-05T20:11:02.097+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-05T20:11:02.121+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-05T20:11:02.752+0000] {sql.py:450} INFO - Running statement: CREATE DATABASE IF NOT EXISTS ***_PI, parameters: None
+[2024-02-05T20:11:02.817+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-05T20:11:02.864+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=Read_and_load_of_API_to_MySQLDB, task_id=Database_Creation, execution_date=20240128T000000, start_date=20240205T201101, end_date=20240205T201102
+[2024-02-05T20:11:02.990+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-05T20:11:03.116+0000] {taskinstance.py:3280} INFO - 2 downstream tasks scheduled from follow-on schedule check

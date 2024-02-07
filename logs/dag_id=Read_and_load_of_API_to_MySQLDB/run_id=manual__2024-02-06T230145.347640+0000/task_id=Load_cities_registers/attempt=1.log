@@ -1,0 +1,43 @@
+[2024-02-06T23:02:45.425+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_cities_registers manual__2024-02-06T23:01:45.347640+00:00 [queued]>
+[2024-02-06T23:02:45.562+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_cities_registers manual__2024-02-06T23:01:45.347640+00:00 [queued]>
+[2024-02-06T23:02:45.572+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 6
+[2024-02-06T23:02:45.709+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): Load_cities_registers> on 2024-02-06 23:01:45.347640+00:00
+[2024-02-06T23:02:45.746+0000] {standard_task_runner.py:60} INFO - Started process 493 to run task
+[2024-02-06T23:02:45.768+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Read_and_load_of_API_to_MySQLDB', 'Load_cities_registers', 'manual__2024-02-06T23:01:45.347640+00:00', '--job-id', '207', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmp3_n61et3']
+[2024-02-06T23:02:45.774+0000] {standard_task_runner.py:88} INFO - Job 207: Subtask Load_cities_registers
+[2024-02-06T23:02:46.104+0000] {task_command.py:423} INFO - Running <TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_cities_registers manual__2024-02-06T23:01:45.347640+00:00 [running]> on host 1518ce13a9bd
+[2024-02-06T23:02:47.648+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='Read_and_load_of_API_to_MySQLDB' AIRFLOW_CTX_TASK_ID='Load_cities_registers' AIRFLOW_CTX_EXECUTION_DATE='2024-02-06T23:01:45.347640+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-02-06T23:01:45.347640+00:00'
+[2024-02-06T23:02:48.132+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T23:02:48.272+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO ***_PI.cities(name) VALUES ('Aliyaview'), parameters: None
+[2024-02-06T23:02:48.865+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T23:02:49.238+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T23:02:49.313+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO ***_PI.cities(name) VALUES ('Howemouth'), parameters: None
+[2024-02-06T23:02:49.335+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T23:02:49.468+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T23:02:49.538+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO ***_PI.cities(name) VALUES ('South Christy'), parameters: None
+[2024-02-06T23:02:49.610+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T23:02:50.149+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T23:02:50.256+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO ***_PI.cities(name) VALUES ('South Elvis'), parameters: None
+[2024-02-06T23:02:50.280+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T23:02:50.502+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T23:02:50.626+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO ***_PI.cities(name) VALUES ('Roscoeview'), parameters: None
+[2024-02-06T23:02:50.832+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T23:02:51.383+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T23:02:51.669+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO ***_PI.cities(name) VALUES ('McKenziehaven'), parameters: None
+[2024-02-06T23:02:51.712+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T23:02:52.035+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T23:02:52.144+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO ***_PI.cities(name) VALUES ('Bartholomebury'), parameters: None
+[2024-02-06T23:02:52.178+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T23:02:52.727+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T23:02:52.832+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO ***_PI.cities(name) VALUES ('Wisokyburgh'), parameters: None
+[2024-02-06T23:02:52.944+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T23:02:53.167+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T23:02:53.292+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO ***_PI.cities(name) VALUES ('Lebsackbury'), parameters: None
+[2024-02-06T23:02:53.332+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T23:02:54.166+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T23:02:54.353+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO ***_PI.cities(name) VALUES ('Gwenborough'), parameters: None
+[2024-02-06T23:02:54.364+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T23:02:54.443+0000] {python.py:201} INFO - Done. Returned value was: None
+[2024-02-06T23:02:54.505+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=Read_and_load_of_API_to_MySQLDB, task_id=Load_cities_registers, execution_date=20240206T230145, start_date=20240206T230245, end_date=20240206T230254
+[2024-02-06T23:02:54.650+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-06T23:02:54.889+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

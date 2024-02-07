@@ -1,0 +1,14 @@
+[2024-02-05T21:00:17.776+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Get_API_users manual__2024-02-05T20:56:39.402511+00:00 [queued]>
+[2024-02-05T21:00:17.819+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Get_API_users manual__2024-02-05T20:56:39.402511+00:00 [queued]>
+[2024-02-05T21:00:17.821+0000] {taskinstance.py:2170} INFO - Starting attempt 6 of 11
+[2024-02-05T21:00:17.871+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): Get_API_users> on 2024-02-05 20:56:39.402511+00:00
+[2024-02-05T21:00:17.883+0000] {standard_task_runner.py:60} INFO - Started process 1314 to run task
+[2024-02-05T21:00:17.890+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Read_and_load_of_API_to_MySQLDB', 'Get_API_users', 'manual__2024-02-05T20:56:39.402511+00:00', '--job-id', '81', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmpc4137k8v']
+[2024-02-05T21:00:17.893+0000] {standard_task_runner.py:88} INFO - Job 81: Subtask Get_API_users
+[2024-02-05T21:00:17.994+0000] {task_command.py:423} INFO - Running <TaskInstance: Read_and_load_of_API_to_MySQLDB.Get_API_users manual__2024-02-05T20:56:39.402511+00:00 [running]> on host 648978c3a8b9
+[2024-02-05T21:00:18.221+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='Read_and_load_of_API_to_MySQLDB' AIRFLOW_CTX_TASK_ID='Get_API_users' AIRFLOW_CTX_EXECUTION_DATE='2024-02-05T20:56:39.402511+00:00' AIRFLOW_CTX_TRY_NUMBER='6' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-02-05T20:56:39.402511+00:00'
+[2024-02-05T21:00:18.578+0000] {logging_mixin.py:188} INFO - {'Bartholomebury', 'South Elvis', 'Aliyaview', 'Gwenborough', 'McKenziehaven', 'Roscoeview', 'Lebsackbury', 'Wisokyburgh', 'Howemouth', 'South Christy'}
+[2024-02-05T21:00:18.580+0000] {python.py:201} INFO - Done. Returned value was: None
+[2024-02-05T21:00:18.603+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=Read_and_load_of_API_to_MySQLDB, task_id=Get_API_users, execution_date=20240205T205639, start_date=20240205T210017, end_date=20240205T210018
+[2024-02-05T21:00:18.670+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-05T21:00:18.701+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

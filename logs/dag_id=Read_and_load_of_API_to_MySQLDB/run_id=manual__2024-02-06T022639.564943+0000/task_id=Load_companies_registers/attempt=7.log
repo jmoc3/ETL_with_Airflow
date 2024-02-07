@@ -1,0 +1,24 @@
+[2024-02-06T02:35:55.093+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_companies_registers manual__2024-02-06T02:26:39.564943+00:00 [queued]>
+[2024-02-06T02:35:55.134+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_companies_registers manual__2024-02-06T02:26:39.564943+00:00 [queued]>
+[2024-02-06T02:35:55.142+0000] {taskinstance.py:2170} INFO - Starting attempt 7 of 12
+[2024-02-06T02:35:55.234+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): Load_companies_registers> on 2024-02-06 02:26:39.564943+00:00
+[2024-02-06T02:35:55.249+0000] {standard_task_runner.py:60} INFO - Started process 689 to run task
+[2024-02-06T02:35:55.254+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Read_and_load_of_API_to_MySQLDB', 'Load_companies_registers', 'manual__2024-02-06T02:26:39.564943+00:00', '--job-id', '114', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmpspnb71t_']
+[2024-02-06T02:35:55.259+0000] {standard_task_runner.py:88} INFO - Job 114: Subtask Load_companies_registers
+[2024-02-06T02:35:55.370+0000] {task_command.py:423} INFO - Running <TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_companies_registers manual__2024-02-06T02:26:39.564943+00:00 [running]> on host 648978c3a8b9
+[2024-02-06T02:35:55.608+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='Read_and_load_of_API_to_MySQLDB' AIRFLOW_CTX_TASK_ID='Load_companies_registers' AIRFLOW_CTX_EXECUTION_DATE='2024-02-06T02:26:39.564943+00:00' AIRFLOW_CTX_TRY_NUMBER='7' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-02-06T02:26:39.564943+00:00'
+[2024-02-06T02:35:55.635+0000] {logging_mixin.py:188} INFO - Romaguera-Crona
+[2024-02-06T02:35:55.637+0000] {logging_mixin.py:188} INFO - Deckow-Crist
+[2024-02-06T02:35:55.642+0000] {logging_mixin.py:188} INFO - Romaguera-Jacobson
+[2024-02-06T02:35:55.643+0000] {logging_mixin.py:188} INFO - Robel-Corkery
+[2024-02-06T02:35:55.644+0000] {logging_mixin.py:188} INFO - Keebler LLC
+[2024-02-06T02:35:55.645+0000] {logging_mixin.py:188} INFO - Considine-Lockman
+[2024-02-06T02:35:55.646+0000] {logging_mixin.py:188} INFO - Johns Group
+[2024-02-06T02:35:55.647+0000] {logging_mixin.py:188} INFO - Abernathy Group
+[2024-02-06T02:35:55.648+0000] {logging_mixin.py:188} INFO - Yost and Sons
+[2024-02-06T02:35:55.650+0000] {logging_mixin.py:188} INFO - Hoeger LLC
+[2024-02-06T02:35:55.651+0000] {logging_mixin.py:188} INFO - [{'name': 'Romaguera-Crona', 'catchPhrase': 'Multi-layered client-server neural-net', 'bs': 'harness real-time e-markets'}, {'name': 'Deckow-Crist', 'catchPhrase': 'Proactive didactic contingency', 'bs': 'synergize scalable supply-chains'}, {'name': 'Romaguera-Jacobson', 'catchPhrase': 'Face to face bifurcated interface', 'bs': 'e-enable strategic applications'}, {'name': 'Robel-Corkery', 'catchPhrase': 'Multi-tiered zero tolerance productivity', 'bs': 'transition cutting-edge web services'}, {'name': 'Keebler LLC', 'catchPhrase': 'User-centric fault-tolerant solution', 'bs': 'revolutionize end-to-end systems'}, {'name': 'Considine-Lockman', 'catchPhrase': 'Synchronised bottom-line interface', 'bs': 'e-enable innovative applications'}, {'name': 'Johns Group', 'catchPhrase': 'Configurable multimedia task-force', 'bs': 'generate enterprise e-tailers'}, {'name': 'Abernathy Group', 'catchPhrase': 'Implemented secondary concept', 'bs': 'e-enable extensible e-tailers'}, {'name': 'Yost and Sons', 'catchPhrase': 'Switchable contextually-based project', 'bs': 'aggregate real-time technologies'}, {'name': 'Hoeger LLC', 'catchPhrase': 'Centralized empowering task-force', 'bs': 'target end-to-end models'}]
+[2024-02-06T02:35:55.652+0000] {python.py:201} INFO - Done. Returned value was: None
+[2024-02-06T02:35:55.682+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=Read_and_load_of_API_to_MySQLDB, task_id=Load_companies_registers, execution_date=20240206T022639, start_date=20240206T023555, end_date=20240206T023555
+[2024-02-06T02:35:55.750+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-06T02:35:55.810+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

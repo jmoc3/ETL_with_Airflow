@@ -1,0 +1,24 @@
+[2024-02-06T02:37:05.714+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_companies_registers manual__2024-02-06T02:26:39.564943+00:00 [queued]>
+[2024-02-06T02:37:05.733+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_companies_registers manual__2024-02-06T02:26:39.564943+00:00 [queued]>
+[2024-02-06T02:37:05.738+0000] {taskinstance.py:2170} INFO - Starting attempt 10 of 15
+[2024-02-06T02:37:05.795+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): Load_companies_registers> on 2024-02-06 02:26:39.564943+00:00
+[2024-02-06T02:37:05.808+0000] {standard_task_runner.py:60} INFO - Started process 720 to run task
+[2024-02-06T02:37:05.818+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Read_and_load_of_API_to_MySQLDB', 'Load_companies_registers', 'manual__2024-02-06T02:26:39.564943+00:00', '--job-id', '117', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmp4px2dxey']
+[2024-02-06T02:37:05.839+0000] {standard_task_runner.py:88} INFO - Job 117: Subtask Load_companies_registers
+[2024-02-06T02:37:06.016+0000] {task_command.py:423} INFO - Running <TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_companies_registers manual__2024-02-06T02:26:39.564943+00:00 [running]> on host 648978c3a8b9
+[2024-02-06T02:37:06.360+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='Read_and_load_of_API_to_MySQLDB' AIRFLOW_CTX_TASK_ID='Load_companies_registers' AIRFLOW_CTX_EXECUTION_DATE='2024-02-06T02:26:39.564943+00:00' AIRFLOW_CTX_TRY_NUMBER='10' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-02-06T02:26:39.564943+00:00'
+[2024-02-06T02:37:06.399+0000] {logging_mixin.py:188} INFO - Romaguera-Crona \ Multi-layered client-server neural-net \ h)
+[2024-02-06T02:37:06.449+0000] {logging_mixin.py:188} INFO - Deckow-Crist \ Proactive didactic contingency \ s)
+[2024-02-06T02:37:06.451+0000] {logging_mixin.py:188} INFO - Romaguera-Jacobson \ Face to face bifurcated interface \ e)
+[2024-02-06T02:37:06.505+0000] {logging_mixin.py:188} INFO - Robel-Corkery \ Multi-tiered zero tolerance productivity \ t)
+[2024-02-06T02:37:06.507+0000] {logging_mixin.py:188} INFO - Keebler LLC \ User-centric fault-tolerant solution \ r)
+[2024-02-06T02:37:06.516+0000] {logging_mixin.py:188} INFO - Considine-Lockman \ Synchronised bottom-line interface \ e)
+[2024-02-06T02:37:06.523+0000] {logging_mixin.py:188} INFO - Johns Group \ Configurable multimedia task-force \ g)
+[2024-02-06T02:37:06.532+0000] {logging_mixin.py:188} INFO - Abernathy Group \ Implemented secondary concept \ e)
+[2024-02-06T02:37:06.534+0000] {logging_mixin.py:188} INFO - Yost and Sons \ Switchable contextually-based project \ a)
+[2024-02-06T02:37:06.569+0000] {logging_mixin.py:188} INFO - Hoeger LLC \ Centralized empowering task-force \ t)
+[2024-02-06T02:37:06.573+0000] {logging_mixin.py:188} INFO - [{'name': 'Romaguera-Crona', 'catchPhrase': 'Multi-layered client-server neural-net', 'bs': 'harness real-time e-markets'}, {'name': 'Deckow-Crist', 'catchPhrase': 'Proactive didactic contingency', 'bs': 'synergize scalable supply-chains'}, {'name': 'Romaguera-Jacobson', 'catchPhrase': 'Face to face bifurcated interface', 'bs': 'e-enable strategic applications'}, {'name': 'Robel-Corkery', 'catchPhrase': 'Multi-tiered zero tolerance productivity', 'bs': 'transition cutting-edge web services'}, {'name': 'Keebler LLC', 'catchPhrase': 'User-centric fault-tolerant solution', 'bs': 'revolutionize end-to-end systems'}, {'name': 'Considine-Lockman', 'catchPhrase': 'Synchronised bottom-line interface', 'bs': 'e-enable innovative applications'}, {'name': 'Johns Group', 'catchPhrase': 'Configurable multimedia task-force', 'bs': 'generate enterprise e-tailers'}, {'name': 'Abernathy Group', 'catchPhrase': 'Implemented secondary concept', 'bs': 'e-enable extensible e-tailers'}, {'name': 'Yost and Sons', 'catchPhrase': 'Switchable contextually-based project', 'bs': 'aggregate real-time technologies'}, {'name': 'Hoeger LLC', 'catchPhrase': 'Centralized empowering task-force', 'bs': 'target end-to-end models'}]
+[2024-02-06T02:37:06.584+0000] {python.py:201} INFO - Done. Returned value was: None
+[2024-02-06T02:37:06.647+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=Read_and_load_of_API_to_MySQLDB, task_id=Load_companies_registers, execution_date=20240206T022639, start_date=20240206T023705, end_date=20240206T023706
+[2024-02-06T02:37:06.734+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-06T02:37:06.781+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

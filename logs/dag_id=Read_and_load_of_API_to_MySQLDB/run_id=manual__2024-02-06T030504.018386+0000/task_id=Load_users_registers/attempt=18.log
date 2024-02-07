@@ -1,0 +1,73 @@
+[2024-02-06T19:18:31.516+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_users_registers manual__2024-02-06T03:05:04.018386+00:00 [queued]>
+[2024-02-06T19:18:31.538+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_users_registers manual__2024-02-06T03:05:04.018386+00:00 [queued]>
+[2024-02-06T19:18:31.540+0000] {taskinstance.py:2170} INFO - Starting attempt 18 of 23
+[2024-02-06T19:18:31.576+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): Load_users_registers> on 2024-02-06 03:05:04.018386+00:00
+[2024-02-06T19:18:31.586+0000] {standard_task_runner.py:60} INFO - Started process 917 to run task
+[2024-02-06T19:18:31.596+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Read_and_load_of_API_to_MySQLDB', 'Load_users_registers', 'manual__2024-02-06T03:05:04.018386+00:00', '--job-id', '180', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmpo155hc9t']
+[2024-02-06T19:18:31.600+0000] {standard_task_runner.py:88} INFO - Job 180: Subtask Load_users_registers
+[2024-02-06T19:18:31.698+0000] {task_command.py:423} INFO - Running <TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_users_registers manual__2024-02-06T03:05:04.018386+00:00 [running]> on host 648978c3a8b9
+[2024-02-06T19:18:31.878+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='Read_and_load_of_API_to_MySQLDB' AIRFLOW_CTX_TASK_ID='Load_users_registers' AIRFLOW_CTX_EXECUTION_DATE='2024-02-06T03:05:04.018386+00:00' AIRFLOW_CTX_TRY_NUMBER='18' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-02-06T03:05:04.018386+00:00'
+[2024-02-06T19:18:31.913+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T19:18:31.931+0000] {sql.py:450} INFO - Running statement: SELECT id FROM ***_PI.cities WHERE name = 'Gwenborough', parameters: None
+[2024-02-06T19:18:31.932+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T19:18:31.947+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T19:18:31.956+0000] {sql.py:450} INFO - Running statement: SELECT id FROM ***_PI.companies WHERE name = 'Romaguera-Crona', parameters: None
+[2024-02-06T19:18:31.958+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T19:18:31.969+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T19:18:31.977+0000] {sql.py:450} INFO - Running statement: SELECT id FROM ***_PI.cities WHERE name = 'Wisokyburgh', parameters: None
+[2024-02-06T19:18:31.979+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T19:18:31.992+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T19:18:31.998+0000] {sql.py:450} INFO - Running statement: SELECT id FROM ***_PI.companies WHERE name = 'Deckow-Crist', parameters: None
+[2024-02-06T19:18:31.999+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T19:18:32.012+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T19:18:32.019+0000] {sql.py:450} INFO - Running statement: SELECT id FROM ***_PI.cities WHERE name = 'McKenziehaven', parameters: None
+[2024-02-06T19:18:32.021+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T19:18:32.034+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T19:18:32.043+0000] {sql.py:450} INFO - Running statement: SELECT id FROM ***_PI.companies WHERE name = 'Romaguera-Jacobson', parameters: None
+[2024-02-06T19:18:32.045+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T19:18:32.058+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T19:18:32.066+0000] {sql.py:450} INFO - Running statement: SELECT id FROM ***_PI.cities WHERE name = 'South Elvis', parameters: None
+[2024-02-06T19:18:32.068+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T19:18:32.081+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T19:18:32.092+0000] {sql.py:450} INFO - Running statement: SELECT id FROM ***_PI.companies WHERE name = 'Robel-Corkery', parameters: None
+[2024-02-06T19:18:32.094+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T19:18:32.112+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T19:18:32.120+0000] {sql.py:450} INFO - Running statement: SELECT id FROM ***_PI.cities WHERE name = 'Roscoeview', parameters: None
+[2024-02-06T19:18:32.123+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T19:18:32.134+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T19:18:32.141+0000] {sql.py:450} INFO - Running statement: SELECT id FROM ***_PI.companies WHERE name = 'Keebler LLC', parameters: None
+[2024-02-06T19:18:32.143+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T19:18:32.153+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T19:18:32.163+0000] {sql.py:450} INFO - Running statement: SELECT id FROM ***_PI.cities WHERE name = 'South Christy', parameters: None
+[2024-02-06T19:18:32.165+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T19:18:32.181+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T19:18:32.193+0000] {sql.py:450} INFO - Running statement: SELECT id FROM ***_PI.companies WHERE name = 'Considine-Lockman', parameters: None
+[2024-02-06T19:18:32.196+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T19:18:32.216+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T19:18:32.226+0000] {sql.py:450} INFO - Running statement: SELECT id FROM ***_PI.cities WHERE name = 'Howemouth', parameters: None
+[2024-02-06T19:18:32.228+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T19:18:32.240+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T19:18:32.246+0000] {sql.py:450} INFO - Running statement: SELECT id FROM ***_PI.companies WHERE name = 'Johns Group', parameters: None
+[2024-02-06T19:18:32.248+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T19:18:32.260+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T19:18:32.267+0000] {sql.py:450} INFO - Running statement: SELECT id FROM ***_PI.cities WHERE name = 'Aliyaview', parameters: None
+[2024-02-06T19:18:32.268+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T19:18:32.284+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T19:18:32.292+0000] {sql.py:450} INFO - Running statement: SELECT id FROM ***_PI.companies WHERE name = 'Abernathy Group', parameters: None
+[2024-02-06T19:18:32.294+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T19:18:32.306+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T19:18:32.313+0000] {sql.py:450} INFO - Running statement: SELECT id FROM ***_PI.cities WHERE name = 'Bartholomebury', parameters: None
+[2024-02-06T19:18:32.314+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T19:18:32.329+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T19:18:32.339+0000] {sql.py:450} INFO - Running statement: SELECT id FROM ***_PI.companies WHERE name = 'Yost and Sons', parameters: None
+[2024-02-06T19:18:32.341+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T19:18:32.351+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T19:18:32.361+0000] {sql.py:450} INFO - Running statement: SELECT id FROM ***_PI.cities WHERE name = 'Lebsackbury', parameters: None
+[2024-02-06T19:18:32.362+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T19:18:32.374+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T19:18:32.381+0000] {sql.py:450} INFO - Running statement: SELECT id FROM ***_PI.companies WHERE name = 'Hoeger LLC', parameters: None
+[2024-02-06T19:18:32.383+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T19:18:32.384+0000] {python.py:201} INFO - Done. Returned value was: None
+[2024-02-06T19:18:32.400+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=Read_and_load_of_API_to_MySQLDB, task_id=Load_users_registers, execution_date=20240206T030504, start_date=20240206T191831, end_date=20240206T191832
+[2024-02-06T19:18:32.450+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-06T19:18:32.494+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

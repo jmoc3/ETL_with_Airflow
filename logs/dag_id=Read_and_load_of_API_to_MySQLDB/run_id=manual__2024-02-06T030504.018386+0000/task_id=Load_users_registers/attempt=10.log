@@ -1,0 +1,53 @@
+[2024-02-06T19:10:37.981+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_users_registers manual__2024-02-06T03:05:04.018386+00:00 [queued]>
+[2024-02-06T19:10:38.002+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_users_registers manual__2024-02-06T03:05:04.018386+00:00 [queued]>
+[2024-02-06T19:10:38.003+0000] {taskinstance.py:2170} INFO - Starting attempt 10 of 15
+[2024-02-06T19:10:38.035+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): Load_users_registers> on 2024-02-06 03:05:04.018386+00:00
+[2024-02-06T19:10:38.042+0000] {standard_task_runner.py:60} INFO - Started process 711 to run task
+[2024-02-06T19:10:38.048+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Read_and_load_of_API_to_MySQLDB', 'Load_users_registers', 'manual__2024-02-06T03:05:04.018386+00:00', '--job-id', '172', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmpmvqxnzk4']
+[2024-02-06T19:10:38.053+0000] {standard_task_runner.py:88} INFO - Job 172: Subtask Load_users_registers
+[2024-02-06T19:10:38.147+0000] {task_command.py:423} INFO - Running <TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_users_registers manual__2024-02-06T03:05:04.018386+00:00 [running]> on host 648978c3a8b9
+[2024-02-06T19:10:38.346+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='Read_and_load_of_API_to_MySQLDB' AIRFLOW_CTX_TASK_ID='Load_users_registers' AIRFLOW_CTX_EXECUTION_DATE='2024-02-06T03:05:04.018386+00:00' AIRFLOW_CTX_TRY_NUMBER='10' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-02-06T03:05:04.018386+00:00'
+[2024-02-06T19:10:38.397+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T19:10:38.417+0000] {sql.py:450} INFO - Running statement: SELECT id FROM ***_PI.cities WHERE name = 'Gwenborough', parameters: None
+[2024-02-06T19:10:38.419+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T19:10:38.421+0000] {logging_mixin.py:188} INFO - None
+[2024-02-06T19:10:38.434+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T19:10:38.441+0000] {sql.py:450} INFO - Running statement: SELECT id FROM ***_PI.cities WHERE name = 'Wisokyburgh', parameters: None
+[2024-02-06T19:10:38.442+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T19:10:38.444+0000] {logging_mixin.py:188} INFO - None
+[2024-02-06T19:10:38.453+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T19:10:38.459+0000] {sql.py:450} INFO - Running statement: SELECT id FROM ***_PI.cities WHERE name = 'McKenziehaven', parameters: None
+[2024-02-06T19:10:38.461+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T19:10:38.464+0000] {logging_mixin.py:188} INFO - None
+[2024-02-06T19:10:38.472+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T19:10:38.478+0000] {sql.py:450} INFO - Running statement: SELECT id FROM ***_PI.cities WHERE name = 'South Elvis', parameters: None
+[2024-02-06T19:10:38.481+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T19:10:38.483+0000] {logging_mixin.py:188} INFO - None
+[2024-02-06T19:10:38.491+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T19:10:38.498+0000] {sql.py:450} INFO - Running statement: SELECT id FROM ***_PI.cities WHERE name = 'Roscoeview', parameters: None
+[2024-02-06T19:10:38.500+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T19:10:38.501+0000] {logging_mixin.py:188} INFO - None
+[2024-02-06T19:10:38.509+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T19:10:38.516+0000] {sql.py:450} INFO - Running statement: SELECT id FROM ***_PI.cities WHERE name = 'South Christy', parameters: None
+[2024-02-06T19:10:38.518+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T19:10:38.519+0000] {logging_mixin.py:188} INFO - None
+[2024-02-06T19:10:38.528+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T19:10:38.534+0000] {sql.py:450} INFO - Running statement: SELECT id FROM ***_PI.cities WHERE name = 'Howemouth', parameters: None
+[2024-02-06T19:10:38.536+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T19:10:38.537+0000] {logging_mixin.py:188} INFO - None
+[2024-02-06T19:10:38.547+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T19:10:38.554+0000] {sql.py:450} INFO - Running statement: SELECT id FROM ***_PI.cities WHERE name = 'Aliyaview', parameters: None
+[2024-02-06T19:10:38.555+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T19:10:38.557+0000] {logging_mixin.py:188} INFO - None
+[2024-02-06T19:10:38.570+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T19:10:38.578+0000] {sql.py:450} INFO - Running statement: SELECT id FROM ***_PI.cities WHERE name = 'Bartholomebury', parameters: None
+[2024-02-06T19:10:38.581+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T19:10:38.582+0000] {logging_mixin.py:188} INFO - None
+[2024-02-06T19:10:38.592+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T19:10:38.599+0000] {sql.py:450} INFO - Running statement: SELECT id FROM ***_PI.cities WHERE name = 'Lebsackbury', parameters: None
+[2024-02-06T19:10:38.601+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-06T19:10:38.602+0000] {logging_mixin.py:188} INFO - None
+[2024-02-06T19:10:38.602+0000] {python.py:201} INFO - Done. Returned value was: None
+[2024-02-06T19:10:38.619+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=Read_and_load_of_API_to_MySQLDB, task_id=Load_users_registers, execution_date=20240206T030504, start_date=20240206T191037, end_date=20240206T191038
+[2024-02-06T19:10:38.671+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-06T19:10:38.705+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

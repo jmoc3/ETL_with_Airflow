@@ -1,0 +1,14 @@
+[2024-02-07T02:37:40.504+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_API_posts manual__2024-02-06T23:01:45.347640+00:00 [queued]>
+[2024-02-07T02:37:40.527+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_API_posts manual__2024-02-06T23:01:45.347640+00:00 [queued]>
+[2024-02-07T02:37:40.528+0000] {taskinstance.py:2170} INFO - Starting attempt 29 of 34
+[2024-02-07T02:37:40.563+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): Load_API_posts> on 2024-02-06 23:01:45.347640+00:00
+[2024-02-07T02:37:40.571+0000] {standard_task_runner.py:60} INFO - Started process 1053 to run task
+[2024-02-07T02:37:40.576+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Read_and_load_of_API_to_MySQLDB', 'Load_API_posts', 'manual__2024-02-06T23:01:45.347640+00:00', '--job-id', '240', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmps76z45_r']
+[2024-02-07T02:37:40.579+0000] {standard_task_runner.py:88} INFO - Job 240: Subtask Load_API_posts
+[2024-02-07T02:37:40.672+0000] {task_command.py:423} INFO - Running <TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_API_posts manual__2024-02-06T23:01:45.347640+00:00 [running]> on host 1518ce13a9bd
+[2024-02-07T02:37:40.891+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='Read_and_load_of_API_to_MySQLDB' AIRFLOW_CTX_TASK_ID='Load_API_posts' AIRFLOW_CTX_EXECUTION_DATE='2024-02-06T23:01:45.347640+00:00' AIRFLOW_CTX_TRY_NUMBER='29' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-02-06T23:01:45.347640+00:00'
+[2024-02-07T02:37:41.321+0000] {logging_mixin.py:188} INFO - {'_log_config_logger_name': '***.task.hooks', '_logger_name': None, 'redis_conn_id': 'redis_connection', 'redis': None, 'host': None, 'port': None, 'username': None, 'password': None, 'db': None}
+[2024-02-07T02:37:41.323+0000] {python.py:201} INFO - Done. Returned value was: None
+[2024-02-07T02:37:41.359+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=Read_and_load_of_API_to_MySQLDB, task_id=Load_API_posts, execution_date=20240206T230145, start_date=20240207T023740, end_date=20240207T023741
+[2024-02-07T02:37:41.459+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-07T02:37:41.501+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,29 @@
+[2024-02-02T02:32:24.674+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Cities_table_Creation manual__2024-02-02T02:32:13.432916+00:00 [queued]>
+[2024-02-02T02:32:24.880+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Cities_table_Creation manual__2024-02-02T02:32:13.432916+00:00 [queued]>
+[2024-02-02T02:32:24.883+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 6
+[2024-02-02T02:32:25.151+0000] {taskinstance.py:2191} INFO - Executing <Task(MySqlOperator): Cities_table_Creation> on 2024-02-02 02:32:13.432916+00:00
+[2024-02-02T02:32:25.187+0000] {standard_task_runner.py:60} INFO - Started process 4724 to run task
+[2024-02-02T02:32:25.326+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Read_and_load_of_API_to_MySQLDB', 'Cities_table_Creation', 'manual__2024-02-02T02:32:13.432916+00:00', '--job-id', '50', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmplhtmri2n']
+[2024-02-02T02:32:25.400+0000] {standard_task_runner.py:88} INFO - Job 50: Subtask Cities_table_Creation
+[2024-02-02T02:32:26.412+0000] {task_command.py:423} INFO - Running <TaskInstance: Read_and_load_of_API_to_MySQLDB.Cities_table_Creation manual__2024-02-02T02:32:13.432916+00:00 [running]> on host 648978c3a8b9
+[2024-02-02T02:32:36.132+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='Read_and_load_of_API_to_MySQLDB' AIRFLOW_CTX_TASK_ID='Cities_table_Creation' AIRFLOW_CTX_EXECUTION_DATE='2024-02-02T02:32:13.432916+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-02-02T02:32:13.432916+00:00'
+[2024-02-02T02:32:36.220+0000] {sql.py:276} INFO - Executing: 
+            CREATE TABLE IF NOT EXISTS cities(
+              id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+              name VARCHAR(25) NOT NULL
+            )
+
+           
+[2024-02-02T02:32:36.324+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-02T02:32:36.395+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-02T02:32:37.027+0000] {sql.py:450} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS cities(
+              id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+              name VARCHAR(25) NOT NULL
+            )
+
+           , parameters: None
+[2024-02-02T02:32:39.033+0000] {sql.py:459} INFO - Rows affected: 0
+[2024-02-02T02:32:39.332+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=Read_and_load_of_API_to_MySQLDB, task_id=Cities_table_Creation, execution_date=20240202T023213, start_date=20240202T023224, end_date=20240202T023239
+[2024-02-02T02:32:39.587+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-02T02:32:40.141+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

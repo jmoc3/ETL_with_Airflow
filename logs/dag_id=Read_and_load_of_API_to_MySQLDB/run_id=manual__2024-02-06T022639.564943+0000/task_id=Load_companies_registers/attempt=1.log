@@ -1,0 +1,40 @@
+[2024-02-06T02:27:05.953+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_companies_registers manual__2024-02-06T02:26:39.564943+00:00 [queued]>
+[2024-02-06T02:27:05.991+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_companies_registers manual__2024-02-06T02:26:39.564943+00:00 [queued]>
+[2024-02-06T02:27:06.012+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 6
+[2024-02-06T02:27:06.093+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): Load_companies_registers> on 2024-02-06 02:26:39.564943+00:00
+[2024-02-06T02:27:06.131+0000] {standard_task_runner.py:60} INFO - Started process 483 to run task
+[2024-02-06T02:27:06.141+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Read_and_load_of_API_to_MySQLDB', 'Load_companies_registers', 'manual__2024-02-06T02:26:39.564943+00:00', '--job-id', '108', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmp8v7pymlp']
+[2024-02-06T02:27:06.158+0000] {standard_task_runner.py:88} INFO - Job 108: Subtask Load_companies_registers
+[2024-02-06T02:27:06.347+0000] {task_command.py:423} INFO - Running <TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_companies_registers manual__2024-02-06T02:26:39.564943+00:00 [running]> on host 648978c3a8b9
+[2024-02-06T02:27:06.732+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='Read_and_load_of_API_to_MySQLDB' AIRFLOW_CTX_TASK_ID='Load_companies_registers' AIRFLOW_CTX_EXECUTION_DATE='2024-02-06T02:26:39.564943+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-02-06T02:26:39.564943+00:00'
+[2024-02-06T02:27:06.810+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-06T02:27:06.834+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO companies VALUES (('Romaguera-Crona',),('Multi-layered client-server neural-net',), harness real-time e-markets), parameters: None
+[2024-02-06T02:27:06.839+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 241, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/CRM.py", line 77, in Load_companies_registers
+    company_register.save()
+  File "/opt/airflow/dags/models/Company.py", line 13, in save
+    hook.run(f"INSERT IGNORE INTO companies VALUES ({self.__name},{self.__catch_phrase}, {self.__bs})")
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 398, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 455, in _run_command
+    cur.execute(sql_statement)
+  File "/home/airflow/.local/lib/python3.8/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/home/airflow/.local/lib/python3.8/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+  File "/home/airflow/.local/lib/python3.8/site-packages/MySQLdb/connections.py", line 257, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '),('Multi-layered client-server neural-net',), harness real-time e-markets)' at line 1")
+[2024-02-06T02:27:06.886+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=Read_and_load_of_API_to_MySQLDB, task_id=Load_companies_registers, execution_date=20240206T022639, start_date=20240206T022705, end_date=20240206T022706
+[2024-02-06T02:27:06.943+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 108 for task Load_companies_registers ((1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '),('Multi-layered client-server neural-net',), harness real-time e-markets)' at line 1"); 483)
+[2024-02-06T02:27:06.995+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-02-06T02:27:07.052+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
