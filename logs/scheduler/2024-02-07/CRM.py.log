@@ -1615,3 +1615,31 @@
 [2024-02-07T04:03:15.635+0000] {logging_mixin.py:188} INFO - [2024-02-07T04:03:15.634+0000] {dag.py:3036} INFO - Sync 1 DAGs
 [2024-02-07T04:03:15.691+0000] {logging_mixin.py:188} INFO - [2024-02-07T04:03:15.690+0000] {dag.py:3823} INFO - Setting next_dagrun for Read_and_load_of_API_to_MySQLDB to 2024-02-04 00:00:00+00:00, run_after=2024-02-11 00:00:00+00:00
 [2024-02-07T04:03:15.734+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/CRM.py took 0.325 seconds
+[2024-02-07T04:03:46.271+0000] {processor.py:161} INFO - Started process (PID=795) to work on /opt/airflow/dags/CRM.py
+[2024-02-07T04:03:46.273+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/CRM.py for tasks to queue
+[2024-02-07T04:03:46.275+0000] {logging_mixin.py:188} INFO - [2024-02-07T04:03:46.274+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/CRM.py
+[2024-02-07T04:03:46.421+0000] {processor.py:840} INFO - DAG(s) 'Read_and_load_of_API_to_MySQLDB' retrieved from /opt/airflow/dags/CRM.py
+[2024-02-07T04:03:46.475+0000] {logging_mixin.py:188} INFO - [2024-02-07T04:03:46.475+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-02-07T04:03:46.523+0000] {logging_mixin.py:188} INFO - [2024-02-07T04:03:46.523+0000] {dag.py:3823} INFO - Setting next_dagrun for Read_and_load_of_API_to_MySQLDB to 2024-02-04 00:00:00+00:00, run_after=2024-02-11 00:00:00+00:00
+[2024-02-07T04:03:46.565+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/CRM.py took 0.299 seconds
+[2024-02-07T04:04:16.988+0000] {processor.py:161} INFO - Started process (PID=806) to work on /opt/airflow/dags/CRM.py
+[2024-02-07T04:04:16.991+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/CRM.py for tasks to queue
+[2024-02-07T04:04:16.993+0000] {logging_mixin.py:188} INFO - [2024-02-07T04:04:16.992+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/CRM.py
+[2024-02-07T04:04:17.110+0000] {processor.py:840} INFO - DAG(s) 'Read_and_load_of_API_to_MySQLDB' retrieved from /opt/airflow/dags/CRM.py
+[2024-02-07T04:04:17.171+0000] {logging_mixin.py:188} INFO - [2024-02-07T04:04:17.171+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-02-07T04:04:17.241+0000] {logging_mixin.py:188} INFO - [2024-02-07T04:04:17.241+0000] {dag.py:3823} INFO - Setting next_dagrun for Read_and_load_of_API_to_MySQLDB to 2024-02-04 00:00:00+00:00, run_after=2024-02-11 00:00:00+00:00
+[2024-02-07T04:04:17.312+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/CRM.py took 0.329 seconds
+[2024-02-07T04:04:47.870+0000] {processor.py:161} INFO - Started process (PID=816) to work on /opt/airflow/dags/CRM.py
+[2024-02-07T04:04:47.890+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/CRM.py for tasks to queue
+[2024-02-07T04:04:47.893+0000] {logging_mixin.py:188} INFO - [2024-02-07T04:04:47.892+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/CRM.py
+[2024-02-07T04:04:48.100+0000] {processor.py:840} INFO - DAG(s) 'Read_and_load_of_API_to_MySQLDB' retrieved from /opt/airflow/dags/CRM.py
+[2024-02-07T04:04:48.162+0000] {logging_mixin.py:188} INFO - [2024-02-07T04:04:48.161+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-02-07T04:04:48.203+0000] {logging_mixin.py:188} INFO - [2024-02-07T04:04:48.202+0000] {dag.py:3823} INFO - Setting next_dagrun for Read_and_load_of_API_to_MySQLDB to 2024-02-04 00:00:00+00:00, run_after=2024-02-11 00:00:00+00:00
+[2024-02-07T04:04:48.254+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/CRM.py took 0.401 seconds
+[2024-02-07T04:05:18.885+0000] {processor.py:161} INFO - Started process (PID=827) to work on /opt/airflow/dags/CRM.py
+[2024-02-07T04:05:18.887+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/CRM.py for tasks to queue
+[2024-02-07T04:05:18.889+0000] {logging_mixin.py:188} INFO - [2024-02-07T04:05:18.889+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/CRM.py
+[2024-02-07T04:05:19.119+0000] {processor.py:840} INFO - DAG(s) 'Read_and_load_of_API_to_MySQLDB' retrieved from /opt/airflow/dags/CRM.py
+[2024-02-07T04:05:19.213+0000] {logging_mixin.py:188} INFO - [2024-02-07T04:05:19.212+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-02-07T04:05:19.280+0000] {logging_mixin.py:188} INFO - [2024-02-07T04:05:19.279+0000] {dag.py:3823} INFO - Setting next_dagrun for Read_and_load_of_API_to_MySQLDB to 2024-02-04 00:00:00+00:00, run_after=2024-02-11 00:00:00+00:00
+[2024-02-07T04:05:19.335+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/CRM.py took 0.455 seconds

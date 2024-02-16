@@ -1,0 +1,23 @@
+[2024-02-14T18:12:38.924+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.companies_table scheduled__2024-02-04T00:00:00+00:00 [queued]>
+[2024-02-14T18:12:38.979+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.companies_table scheduled__2024-02-04T00:00:00+00:00 [queued]>
+[2024-02-14T18:12:38.981+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 6
+[2024-02-14T18:12:39.082+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): companies_table> on 2024-02-04 00:00:00+00:00
+[2024-02-14T18:12:39.122+0000] {standard_task_runner.py:60} INFO - Started process 184 to run task
+[2024-02-14T18:12:39.267+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Read_and_load_of_API_to_MySQLDB', 'companies_table', 'scheduled__2024-02-04T00:00:00+00:00', '--job-id', '289', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmpzyfhm4pk']
+[2024-02-14T18:12:39.324+0000] {standard_task_runner.py:88} INFO - Job 289: Subtask companies_table
+[2024-02-14T18:12:39.996+0000] {task_command.py:423} INFO - Running <TaskInstance: Read_and_load_of_API_to_MySQLDB.companies_table scheduled__2024-02-04T00:00:00+00:00 [running]> on host c35f28e50200
+[2024-02-14T18:12:41.125+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='Read_and_load_of_API_to_MySQLDB' AIRFLOW_CTX_TASK_ID='companies_table' AIRFLOW_CTX_EXECUTION_DATE='2024-02-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-02-04T00:00:00+00:00'
+[2024-02-14T18:12:41.427+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-14T18:12:41.806+0000] {sql.py:450} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS ***_PI.companies(
+              id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+              name VARCHAR(25) NOT NULL UNIQUE  ,
+              catchPhrase VARCHAR(225) NOT NULL,
+              bs VARCHAR(50) NOT NULL 
+            )
+            , parameters: None
+[2024-02-14T18:12:43.815+0000] {sql.py:459} INFO - Rows affected: 0
+[2024-02-14T18:12:43.859+0000] {python.py:201} INFO - Done. Returned value was: None
+[2024-02-14T18:12:44.166+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=Read_and_load_of_API_to_MySQLDB, task_id=companies_table, execution_date=20240204T000000, start_date=20240214T181238, end_date=20240214T181244
+[2024-02-14T18:12:44.602+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-14T18:12:45.025+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

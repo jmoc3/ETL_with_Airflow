@@ -1,0 +1,48 @@
+[2024-02-14T18:24:02.946+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_API_posts scheduled__2024-02-04T00:00:00+00:00 [queued]>
+[2024-02-14T18:24:02.977+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_API_posts scheduled__2024-02-04T00:00:00+00:00 [queued]>
+[2024-02-14T18:24:02.978+0000] {taskinstance.py:2170} INFO - Starting attempt 5 of 6
+[2024-02-14T18:24:03.014+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): Load_API_posts> on 2024-02-04 00:00:00+00:00
+[2024-02-14T18:24:03.027+0000] {standard_task_runner.py:60} INFO - Started process 453 to run task
+[2024-02-14T18:24:03.034+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Read_and_load_of_API_to_MySQLDB', 'Load_API_posts', 'scheduled__2024-02-04T00:00:00+00:00', '--job-id', '301', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmp0lp1laz3']
+[2024-02-14T18:24:03.037+0000] {standard_task_runner.py:88} INFO - Job 301: Subtask Load_API_posts
+[2024-02-14T18:24:03.122+0000] {task_command.py:423} INFO - Running <TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_API_posts scheduled__2024-02-04T00:00:00+00:00 [running]> on host c35f28e50200
+[2024-02-14T18:24:03.270+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='Read_and_load_of_API_to_MySQLDB' AIRFLOW_CTX_TASK_ID='Load_API_posts' AIRFLOW_CTX_EXECUTION_DATE='2024-02-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='5' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-02-04T00:00:00+00:00'
+[2024-02-14T18:24:03.677+0000] {base.py:83} INFO - Using connection ID 'redis_connection' for task execution.
+[2024-02-14T18:24:11.685+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/redis/connection.py", line 707, in connect
+    sock = self.retry.call_with_retry(
+  File "/home/airflow/.local/lib/python3.8/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/home/airflow/.local/lib/python3.8/site-packages/redis/connection.py", line 708, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+  File "/home/airflow/.local/lib/python3.8/site-packages/redis/connection.py", line 974, in _connect
+    for res in socket.getaddrinfo(
+  File "/usr/local/lib/python3.8/socket.py", line 918, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 241, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/CRM.py", line 102, in Load_API_posts
+    hook.execute_command('SETEX', 'posts',604800, json.dumps({'content':res}))
+  File "/home/airflow/.local/lib/python3.8/site-packages/redis/client.py", line 1266, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/home/airflow/.local/lib/python3.8/site-packages/redis/connection.py", line 1461, in get_connection
+    connection.connect()
+  File "/home/airflow/.local/lib/python3.8/site-packages/redis/connection.py", line 713, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error -3 connecting to redis:6379. Temporary failure in name resolution.
+[2024-02-14T18:24:11.707+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=Read_and_load_of_API_to_MySQLDB, task_id=Load_API_posts, execution_date=20240204T000000, start_date=20240214T182402, end_date=20240214T182411
+[2024-02-14T18:24:11.727+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 301 for task Load_API_posts (Error -3 connecting to redis:6379. Temporary failure in name resolution.; 453)
+[2024-02-14T18:24:11.780+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-02-14T18:24:11.806+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

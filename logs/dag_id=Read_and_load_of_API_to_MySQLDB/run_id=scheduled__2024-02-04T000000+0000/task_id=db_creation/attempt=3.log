@@ -1,0 +1,41 @@
+[2024-02-15T19:58:57.369+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.db_creation scheduled__2024-02-04T00:00:00+00:00 [queued]>
+[2024-02-15T19:58:57.391+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.db_creation scheduled__2024-02-04T00:00:00+00:00 [queued]>
+[2024-02-15T19:58:57.392+0000] {taskinstance.py:2170} INFO - Starting attempt 3 of 8
+[2024-02-15T19:58:57.422+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): db_creation> on 2024-02-04 00:00:00+00:00
+[2024-02-15T19:58:57.430+0000] {standard_task_runner.py:60} INFO - Started process 1085 to run task
+[2024-02-15T19:58:57.436+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Read_and_load_of_API_to_MySQLDB', 'db_creation', 'scheduled__2024-02-04T00:00:00+00:00', '--job-id', '317', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmp0wy405jc']
+[2024-02-15T19:58:57.441+0000] {standard_task_runner.py:88} INFO - Job 317: Subtask db_creation
+[2024-02-15T19:58:57.528+0000] {task_command.py:423} INFO - Running <TaskInstance: Read_and_load_of_API_to_MySQLDB.db_creation scheduled__2024-02-04T00:00:00+00:00 [running]> on host c35f28e50200
+[2024-02-15T19:58:57.709+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='Read_and_load_of_API_to_MySQLDB' AIRFLOW_CTX_TASK_ID='db_creation' AIRFLOW_CTX_EXECUTION_DATE='2024-02-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-02-04T00:00:00+00:00'
+[2024-02-15T19:58:57.729+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-15T19:58:57.753+0000] {sql.py:450} INFO - Running statement: CREATE DATABASE IF NOT EXISTS ***_PI;, parameters: None
+[2024-02-15T19:58:57.772+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-15T19:58:57.786+0000] {base.py:83} INFO - Using connection ID 'postgres_connection' for task execution.
+[2024-02-15T19:58:57.795+0000] {sql.py:450} INFO - Running statement: CREATE DATABASE IF NOT EXISTS ***_PI;, parameters: None
+[2024-02-15T19:58:57.801+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 241, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/CRM.py", line 39, in db_creation
+    postgres_hook.run(db.get_sql_command())
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 398, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 455, in _run_command
+    cur.execute(sql_statement)
+psycopg2.errors.SyntaxError: syntax error at or near "NOT"
+LINE 1: CREATE DATABASE IF NOT EXISTS ***_PI;
+                           ^
+
+[2024-02-15T19:58:57.829+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=Read_and_load_of_API_to_MySQLDB, task_id=db_creation, execution_date=20240204T000000, start_date=20240215T195857, end_date=20240215T195857
+[2024-02-15T19:58:57.859+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 317 for task db_creation (syntax error at or near "NOT"
+LINE 1: CREATE DATABASE IF NOT EXISTS ***_PI;
+                           ^
+; 1085)
+[2024-02-15T19:58:57.893+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-02-15T19:58:57.952+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,53 @@
+[2024-02-15T20:28:09.811+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.cities_table scheduled__2024-02-04T00:00:00+00:00 [queued]>
+[2024-02-15T20:28:09.966+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.cities_table scheduled__2024-02-04T00:00:00+00:00 [queued]>
+[2024-02-15T20:28:09.974+0000] {taskinstance.py:2170} INFO - Starting attempt 14 of 15
+[2024-02-15T20:28:10.227+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): cities_table> on 2024-02-04 00:00:00+00:00
+[2024-02-15T20:28:10.258+0000] {standard_task_runner.py:60} INFO - Started process 670 to run task
+[2024-02-15T20:28:10.330+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Read_and_load_of_API_to_MySQLDB', 'cities_table', 'scheduled__2024-02-04T00:00:00+00:00', '--job-id', '359', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmpukqurb6t']
+[2024-02-15T20:28:10.346+0000] {standard_task_runner.py:88} INFO - Job 359: Subtask cities_table
+[2024-02-15T20:28:11.092+0000] {task_command.py:423} INFO - Running <TaskInstance: Read_and_load_of_API_to_MySQLDB.cities_table scheduled__2024-02-04T00:00:00+00:00 [running]> on host 9ed0078b97b9
+[2024-02-15T20:28:12.503+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='Read_and_load_of_API_to_MySQLDB' AIRFLOW_CTX_TASK_ID='cities_table' AIRFLOW_CTX_EXECUTION_DATE='2024-02-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='14' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-02-04T00:00:00+00:00'
+[2024-02-15T20:28:12.597+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-15T20:28:12.787+0000] {sql.py:450} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS ***_PI.cities(
+              id INT AUTO_INCREMENT  PRIMARY KEY NOT NULL,
+              name VARCHAR(25) NOT NULL UNIQUE  
+            );
+
+           , parameters: None
+[2024-02-15T20:28:12.899+0000] {sql.py:459} INFO - Rows affected: 0
+[2024-02-15T20:28:12.979+0000] {base.py:83} INFO - Using connection ID 'postgres_connection' for task execution.
+[2024-02-15T20:28:13.062+0000] {sql.py:450} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS ***_PI.cities(
+              id BIGSERIAL PRIMARY KEY NOT NULL,
+              name VARCHAR(25) NOT NULL UNIQUE  
+            );
+
+           , parameters: None
+[2024-02-15T20:28:13.096+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 241, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/CRM.py", line 42, in cities_table
+    postgres_hook.run(db.cities_c('postgres'))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 398, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 455, in _run_command
+    cur.execute(sql_statement)
+psycopg2.errors.InvalidSchemaName: schema "***_pi" does not exist
+LINE 2:             CREATE TABLE IF NOT EXISTS ***_PI.cities(
+                                               ^
+
+[2024-02-15T20:28:13.213+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=Read_and_load_of_API_to_MySQLDB, task_id=cities_table, execution_date=20240204T000000, start_date=20240215T202809, end_date=20240215T202813
+[2024-02-15T20:28:13.338+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 359 for task cities_table (schema "***_pi" does not exist
+LINE 2:             CREATE TABLE IF NOT EXISTS ***_PI.cities(
+                                               ^
+; 670)
+[2024-02-15T20:28:13.396+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-02-15T20:28:13.935+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

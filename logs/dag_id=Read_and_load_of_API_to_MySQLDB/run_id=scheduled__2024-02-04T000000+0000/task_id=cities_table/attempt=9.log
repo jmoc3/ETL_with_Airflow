@@ -1,0 +1,35 @@
+[2024-02-15T20:18:41.890+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.cities_table scheduled__2024-02-04T00:00:00+00:00 [queued]>
+[2024-02-15T20:18:41.922+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.cities_table scheduled__2024-02-04T00:00:00+00:00 [queued]>
+[2024-02-15T20:18:41.926+0000] {taskinstance.py:2170} INFO - Starting attempt 9 of 14
+[2024-02-15T20:18:42.006+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): cities_table> on 2024-02-04 00:00:00+00:00
+[2024-02-15T20:18:42.027+0000] {standard_task_runner.py:60} INFO - Started process 442 to run task
+[2024-02-15T20:18:42.063+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Read_and_load_of_API_to_MySQLDB', 'cities_table', 'scheduled__2024-02-04T00:00:00+00:00', '--job-id', '347', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmpqyz2d37k']
+[2024-02-15T20:18:42.079+0000] {standard_task_runner.py:88} INFO - Job 347: Subtask cities_table
+[2024-02-15T20:18:42.369+0000] {task_command.py:423} INFO - Running <TaskInstance: Read_and_load_of_API_to_MySQLDB.cities_table scheduled__2024-02-04T00:00:00+00:00 [running]> on host 9ed0078b97b9
+[2024-02-15T20:18:42.908+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='Read_and_load_of_API_to_MySQLDB' AIRFLOW_CTX_TASK_ID='cities_table' AIRFLOW_CTX_EXECUTION_DATE='2024-02-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='9' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-02-04T00:00:00+00:00'
+[2024-02-15T20:18:42.946+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-15T20:18:42.987+0000] {sql.py:450} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS ***_PI.cities(
+              id INT AUTO_INCREMENT  PRIMARY KEY NOT NULL,
+              name VARCHAR(25) NOT NULL UNIQUE  
+            );
+
+           , parameters: None
+[2024-02-15T20:18:43.002+0000] {sql.py:459} INFO - Rows affected: 0
+[2024-02-15T20:18:43.004+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 241, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/CRM.py", line 42, in cities_table
+    postgres_hook.run(db.cities_c(db.get_name,'postgres'))
+TypeError: cities_c() takes from 1 to 2 positional arguments but 3 were given
+[2024-02-15T20:18:43.039+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=Read_and_load_of_API_to_MySQLDB, task_id=cities_table, execution_date=20240204T000000, start_date=20240215T201841, end_date=20240215T201843
+[2024-02-15T20:18:43.119+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 347 for task cities_table (cities_c() takes from 1 to 2 positional arguments but 3 were given; 442)
+[2024-02-15T20:18:43.229+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-02-15T20:18:43.646+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,6 +1,7 @@
 from airflow.decorators import dag, task
 from airflow.providers.mysql.hooks.mysql import MySqlHook  
 from airflow.providers.redis.hooks.redis import RedisHook
+from airflow.providers.postgres.hooks.postgres import PostgresHook
 from airflow.providers.redis.operators.redis_publish import RedisPublishOperator
 
 from datetime import datetime, timedelta
@@ -29,23 +30,26 @@ default_arg = {
 )
 def api_load():
 
-  hook = MySqlHook(mysql_conn_id='mysql_connection')    
-
+  mysql_hook = MySqlHook(mysql_conn_id='mysql_connection')    
+  postgres_hook = PostgresHook(postgres_conn_id='postgres_connection')
   @task
   def db_creation():
-    hook.run(db.get_sql_command())
+    mysql_hook.run(db.get_sql_command())
 
   @task
   def cities_table():
-    hook.run(airflow_PI.cities_c(db.get_name()))
+    mysql_hook.run(db.cities_c())
+    postgres_hook.run(db.cities_c('postgres'))
 
   @task
   def companies_table():
-    hook.run(airflow_PI.companies_c(db.get_name()))
+    mysql_hook.run(db.companies_c())
+    postgres_hook.run(db.companies_c('postgres'))
 
   @task
   def users_table():
-    hook.run(airflow_PI.users_c(db.get_name()))
+    mysql_hook.run(db.users_c())
+    postgres_hook.run(db.users_c('postgres'))
 
 ####################################################
 

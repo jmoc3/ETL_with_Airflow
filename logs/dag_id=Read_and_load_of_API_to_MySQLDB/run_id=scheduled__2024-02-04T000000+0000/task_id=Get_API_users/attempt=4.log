@@ -1,0 +1,13 @@
+[2024-02-15T20:00:52.749+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Get_API_users scheduled__2024-02-04T00:00:00+00:00 [queued]>
+[2024-02-15T20:00:52.774+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Get_API_users scheduled__2024-02-04T00:00:00+00:00 [queued]>
+[2024-02-15T20:00:52.775+0000] {taskinstance.py:2170} INFO - Starting attempt 4 of 9
+[2024-02-15T20:00:52.811+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): Get_API_users> on 2024-02-04 00:00:00+00:00
+[2024-02-15T20:00:52.818+0000] {standard_task_runner.py:60} INFO - Started process 1140 to run task
+[2024-02-15T20:00:52.825+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Read_and_load_of_API_to_MySQLDB', 'Get_API_users', 'scheduled__2024-02-04T00:00:00+00:00', '--job-id', '322', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmpun9gmuzq']
+[2024-02-15T20:00:52.829+0000] {standard_task_runner.py:88} INFO - Job 322: Subtask Get_API_users
+[2024-02-15T20:00:52.926+0000] {task_command.py:423} INFO - Running <TaskInstance: Read_and_load_of_API_to_MySQLDB.Get_API_users scheduled__2024-02-04T00:00:00+00:00 [running]> on host c35f28e50200
+[2024-02-15T20:00:53.093+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='Read_and_load_of_API_to_MySQLDB' AIRFLOW_CTX_TASK_ID='Get_API_users' AIRFLOW_CTX_EXECUTION_DATE='2024-02-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='4' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-02-04T00:00:00+00:00'
+[2024-02-15T20:00:53.993+0000] {python.py:201} INFO - Done. Returned value was: None
+[2024-02-15T20:00:54.022+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=Read_and_load_of_API_to_MySQLDB, task_id=Get_API_users, execution_date=20240204T000000, start_date=20240215T200052, end_date=20240215T200054
+[2024-02-15T20:00:54.095+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-15T20:00:54.157+0000] {taskinstance.py:3280} INFO - 2 downstream tasks scheduled from follow-on schedule check

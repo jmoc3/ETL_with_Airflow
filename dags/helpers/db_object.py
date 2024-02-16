@@ -1,7 +1,7 @@
 class airflow_PI():
 
   def __init__(self):
-    self.__sql_create_command =  """CREATE DATABASE IF NOT EXISTS airflow_PI"""
+    self.__sql_create_command =  """CREATE DATABASE IF NOT EXISTS airflow_PI;"""
     self.__name = 'airflow_PI'
 
   def get_name(self):
@@ -10,32 +10,37 @@ class airflow_PI():
   def get_sql_command(self):
     return self.__sql_create_command
 
-  @staticmethod
-  def cities_c(db):
+  def cities_c(self,dbm='MySQL'):
+
+    id_type = 'BIGSERIAL' if dbm == 'postgres' else 'INT AUTO_INCREMENT '
     return f"""
-            CREATE TABLE IF NOT EXISTS {db}.cities(
-              id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+            CREATE TABLE IF NOT EXISTS {self.__name}.cities(
+              id {id_type} PRIMARY KEY NOT NULL,
               name VARCHAR(25) NOT NULL UNIQUE  
-            )
+            );
 
            """
 
-  @staticmethod
-  def companies_c(db):
+  def companies_c(self,dbm='MySQL'):
+
+    id_type = 'BIGSERIAL' if dbm == 'postgres' else 'INT AUTO_INCREMENT '
     return  f"""
-            CREATE TABLE IF NOT EXISTS {db}.companies(
-              id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+            CREATE TABLE IF NOT EXISTS {self.__name}.companies(
+              id {id_type} PRIMARY KEY NOT NULL,
               name VARCHAR(25) NOT NULL UNIQUE  ,
               catchPhrase VARCHAR(225) NOT NULL,
               bs VARCHAR(50) NOT NULL 
-            )
+            );
             """
   
-  @staticmethod
-  def users_c(db):
+  def users_c(self,dbm='MySQL'):
+
+    id_type = 'BIGSERIAL' if dbm == 'postgres' else 'INT AUTO_INCREMENT '
+    clause = 'IF NOT EXIST' if dbm == 'postgres' else 'INT AUTO_INCREMENT '
+
     return f"""
-            CREATE TABLE IF NOT EXISTS {db}.users(
-              id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+            CREATE TABLE IF NOT EXISTS {self.__name}.users(
+              id {id_type} PRIMARY KEY NOT NULL,
               name VARCHAR(25) NOT NULL,
               username VARCHAR(25) NOT NULL,
               email VARCHAR(255) NOT NULL UNIQUE,
@@ -49,5 +54,5 @@ class airflow_PI():
               company_id INT,
               FOREIGN KEY (city_id) REFERENCES cities(id),
               FOREIGN KEY (company_id) REFERENCES companies(id)
-            )
+            );
             """

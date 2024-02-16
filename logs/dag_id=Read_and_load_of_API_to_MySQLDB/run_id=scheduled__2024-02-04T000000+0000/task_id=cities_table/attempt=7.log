@@ -1,0 +1,26 @@
+[2024-02-15T20:15:52.626+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.cities_table scheduled__2024-02-04T00:00:00+00:00 [queued]>
+[2024-02-15T20:15:52.700+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.cities_table scheduled__2024-02-04T00:00:00+00:00 [queued]>
+[2024-02-15T20:15:52.712+0000] {taskinstance.py:2170} INFO - Starting attempt 7 of 12
+[2024-02-15T20:15:52.831+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): cities_table> on 2024-02-04 00:00:00+00:00
+[2024-02-15T20:15:52.851+0000] {standard_task_runner.py:60} INFO - Started process 373 to run task
+[2024-02-15T20:15:52.869+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Read_and_load_of_API_to_MySQLDB', 'cities_table', 'scheduled__2024-02-04T00:00:00+00:00', '--job-id', '342', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmp84n33v_x']
+[2024-02-15T20:15:52.873+0000] {standard_task_runner.py:88} INFO - Job 342: Subtask cities_table
+[2024-02-15T20:15:53.070+0000] {task_command.py:423} INFO - Running <TaskInstance: Read_and_load_of_API_to_MySQLDB.cities_table scheduled__2024-02-04T00:00:00+00:00 [running]> on host 9ed0078b97b9
+[2024-02-15T20:15:53.348+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='Read_and_load_of_API_to_MySQLDB' AIRFLOW_CTX_TASK_ID='cities_table' AIRFLOW_CTX_EXECUTION_DATE='2024-02-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='7' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-02-04T00:00:00+00:00'
+[2024-02-15T20:15:53.357+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 241, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/CRM.py", line 41, in cities_table
+    mysql_hook.run(airflow_PI.cities_c())
+TypeError: cities_c() missing 1 required positional argument: 'self'
+[2024-02-15T20:15:53.376+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=Read_and_load_of_API_to_MySQLDB, task_id=cities_table, execution_date=20240204T000000, start_date=20240215T201552, end_date=20240215T201553
+[2024-02-15T20:15:53.405+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 342 for task cities_table (cities_c() missing 1 required positional argument: 'self'; 373)
+[2024-02-15T20:15:53.466+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-02-15T20:15:53.596+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
