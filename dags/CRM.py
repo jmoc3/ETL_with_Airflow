@@ -7,13 +7,13 @@ from datetime import datetime, timedelta
 import requests
 import json
 
-from helpers.db_object import airflow_PI
+from helpers.db_object import Airflow_PI
 from models.Company import Company
 from models.City import City
 from models.User import User
 
 API = 'https://jsonplaceholder.typicode.com/'
-db = airflow_PI()
+db = Airflow_PI()
 
 default_arg = {
   'owner':'jmoc',

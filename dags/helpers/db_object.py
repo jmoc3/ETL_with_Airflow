@@ -1,4 +1,4 @@
-class airflow_PI():
+class Airflow_PI():
 
   def __init__(self):
     self.__sql_create_command =  """CREATE DATABASE IF NOT EXISTS airflow;"""
