@@ -54,7 +54,7 @@ En nuestro caso cualquier JSON existente dentro de alguna llave en nuestro JSON 
 
 Pero espera, `city` es solo una propiedad dentro del json completo de `address`, entonces porque no simplemente generamos otra tabla llamada `address` y guardamos todo inconcientemente? Bueno, eso implicaria primero que tuviesemos todas las direcciones de cada ciudad existente del pais  guardadas en nuestra base de datos suponiendo que tuviesemos a todo el pais utilizando la aplicacion, lo cual garantizaria un alto consumo innecesario ya que realmente no necesitamos exactamente cada direccion de nuestros usuarios, sin embargo, para posibles analisis geograficos e inclusive desarrollo de modelos de IA, dividir la ciudad en una tabla aparte garantizaria primero independencia por registro y segundo oportunidad de filtrado por ciudad bastante util para consultas necesarias para la empresa. 
 
-> ![TIP]
+> [!TIP]
 > Otro punto de vista de todo esto es que la cardinalidad de ciudad por usuario es de 1:M entonces se hace una tabla dimensional extra, de la misma manera en que puede suceder con la empresa, puede pasar que existan dos personas en una misma empresa.
 
 ## Arquitectura interna
