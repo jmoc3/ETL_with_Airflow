@@ -1,5 +1,5 @@
 
-# Proceso de Automatización de Carga de Datos hacia MySQL, PostgreSQL y Redis
+# Proceso de automatización de carga de datos hacia MySQL, PostgreSQL y Redis
 
 El proceso de extracción, transformación y carga de datos constituye una parte bastante relevante en el flujo de vida de los datos y es una de las primeras cosas configurables después de obtener el input de cualquier lugar, el tema con todo esto es que mantener el proceso de una manera estática contribuye a la **reducción del rendimiento** empresarial y en general de los procesos internos; Problema que se resuelve con la automatización de este proceso, establecer **intervalos temporales de ejecución** en la extracción, transformación y carga de los datos a cualquier base de datos de la empresa elimina la preocupación en este tema y permite enfocarnos en cualquier otro procesos interno empresarial que necesite más cuidado o mano de obra.
 
