@@ -1,0 +1,73 @@
+[2024-02-18T02:02:14.858+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_cities_registers scheduled__2024-02-11T00:00:00+00:00 [queued]>
+[2024-02-18T02:02:14.882+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_cities_registers scheduled__2024-02-11T00:00:00+00:00 [queued]>
+[2024-02-18T02:02:14.883+0000] {taskinstance.py:2170} INFO - Starting attempt 10 of 15
+[2024-02-18T02:02:14.921+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): Load_cities_registers> on 2024-02-11 00:00:00+00:00
+[2024-02-18T02:02:14.931+0000] {standard_task_runner.py:60} INFO - Started process 2246 to run task
+[2024-02-18T02:02:14.939+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Read_and_load_of_API_to_MySQLDB', 'Load_cities_registers', 'scheduled__2024-02-11T00:00:00+00:00', '--job-id', '553', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmpd5ffuvn3']
+[2024-02-18T02:02:14.943+0000] {standard_task_runner.py:88} INFO - Job 553: Subtask Load_cities_registers
+[2024-02-18T02:02:15.058+0000] {task_command.py:423} INFO - Running <TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_cities_registers scheduled__2024-02-11T00:00:00+00:00 [running]> on host 091c4b0f3ebe
+[2024-02-18T02:02:15.364+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='Read_and_load_of_API_to_MySQLDB' AIRFLOW_CTX_TASK_ID='Load_cities_registers' AIRFLOW_CTX_EXECUTION_DATE='2024-02-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='10' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-02-11T00:00:00+00:00'
+[2024-02-18T02:02:15.430+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T02:02:15.677+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO cities(name) VALUES ('Roscoeview');, parameters: None
+[2024-02-18T02:02:15.783+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:15.855+0000] {base.py:83} INFO - Using connection ID 'postgres_connection' for task execution.
+[2024-02-18T02:02:15.881+0000] {sql.py:450} INFO - Running statement: INSERT INTO cities(name) VALUES ('Roscoeview') ON CONFLICT DO NOTHING;, parameters: None
+[2024-02-18T02:02:15.896+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:15.940+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T02:02:15.955+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO cities(name) VALUES ('Lebsackbury');, parameters: None
+[2024-02-18T02:02:15.961+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:15.991+0000] {base.py:83} INFO - Using connection ID 'postgres_connection' for task execution.
+[2024-02-18T02:02:16.008+0000] {sql.py:450} INFO - Running statement: INSERT INTO cities(name) VALUES ('Lebsackbury') ON CONFLICT DO NOTHING;, parameters: None
+[2024-02-18T02:02:16.011+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:16.051+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T02:02:16.081+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO cities(name) VALUES ('South Christy');, parameters: None
+[2024-02-18T02:02:16.087+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:16.149+0000] {base.py:83} INFO - Using connection ID 'postgres_connection' for task execution.
+[2024-02-18T02:02:16.170+0000] {sql.py:450} INFO - Running statement: INSERT INTO cities(name) VALUES ('South Christy') ON CONFLICT DO NOTHING;, parameters: None
+[2024-02-18T02:02:16.175+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:16.198+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T02:02:16.208+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO cities(name) VALUES ('South Elvis');, parameters: None
+[2024-02-18T02:02:16.211+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:16.238+0000] {base.py:83} INFO - Using connection ID 'postgres_connection' for task execution.
+[2024-02-18T02:02:16.278+0000] {sql.py:450} INFO - Running statement: INSERT INTO cities(name) VALUES ('South Elvis') ON CONFLICT DO NOTHING;, parameters: None
+[2024-02-18T02:02:16.283+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:16.314+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T02:02:16.329+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO cities(name) VALUES ('Wisokyburgh');, parameters: None
+[2024-02-18T02:02:16.337+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:16.394+0000] {base.py:83} INFO - Using connection ID 'postgres_connection' for task execution.
+[2024-02-18T02:02:16.407+0000] {sql.py:450} INFO - Running statement: INSERT INTO cities(name) VALUES ('Wisokyburgh') ON CONFLICT DO NOTHING;, parameters: None
+[2024-02-18T02:02:16.410+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:16.446+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T02:02:16.457+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO cities(name) VALUES ('Aliyaview');, parameters: None
+[2024-02-18T02:02:16.462+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:16.510+0000] {base.py:83} INFO - Using connection ID 'postgres_connection' for task execution.
+[2024-02-18T02:02:16.535+0000] {sql.py:450} INFO - Running statement: INSERT INTO cities(name) VALUES ('Aliyaview') ON CONFLICT DO NOTHING;, parameters: None
+[2024-02-18T02:02:16.540+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:16.564+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T02:02:16.574+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO cities(name) VALUES ('Gwenborough');, parameters: None
+[2024-02-18T02:02:16.576+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:16.628+0000] {base.py:83} INFO - Using connection ID 'postgres_connection' for task execution.
+[2024-02-18T02:02:16.643+0000] {sql.py:450} INFO - Running statement: INSERT INTO cities(name) VALUES ('Gwenborough') ON CONFLICT DO NOTHING;, parameters: None
+[2024-02-18T02:02:16.652+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:16.674+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T02:02:16.681+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO cities(name) VALUES ('Bartholomebury');, parameters: None
+[2024-02-18T02:02:16.687+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:16.708+0000] {base.py:83} INFO - Using connection ID 'postgres_connection' for task execution.
+[2024-02-18T02:02:16.716+0000] {sql.py:450} INFO - Running statement: INSERT INTO cities(name) VALUES ('Bartholomebury') ON CONFLICT DO NOTHING;, parameters: None
+[2024-02-18T02:02:16.721+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:16.741+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T02:02:16.748+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO cities(name) VALUES ('Howemouth');, parameters: None
+[2024-02-18T02:02:16.750+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:16.776+0000] {base.py:83} INFO - Using connection ID 'postgres_connection' for task execution.
+[2024-02-18T02:02:16.785+0000] {sql.py:450} INFO - Running statement: INSERT INTO cities(name) VALUES ('Howemouth') ON CONFLICT DO NOTHING;, parameters: None
+[2024-02-18T02:02:16.788+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:16.806+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T02:02:16.814+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO cities(name) VALUES ('McKenziehaven');, parameters: None
+[2024-02-18T02:02:16.816+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:16.848+0000] {base.py:83} INFO - Using connection ID 'postgres_connection' for task execution.
+[2024-02-18T02:02:16.860+0000] {sql.py:450} INFO - Running statement: INSERT INTO cities(name) VALUES ('McKenziehaven') ON CONFLICT DO NOTHING;, parameters: None
+[2024-02-18T02:02:16.865+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:16.875+0000] {python.py:201} INFO - Done. Returned value was: None
+[2024-02-18T02:02:16.900+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=Read_and_load_of_API_to_MySQLDB, task_id=Load_cities_registers, execution_date=20240211T000000, start_date=20240218T020214, end_date=20240218T020216
+[2024-02-18T02:02:16.988+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-18T02:02:17.054+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,133 @@
+[2024-02-18T04:52:57.602+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL_From_an_API_to_MySQL_Postgres_and_Redis.load_users_to_MySQL_and_Postgres scheduled__2024-01-14T00:00:00+00:00 [queued]>
+[2024-02-18T04:52:57.626+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL_From_an_API_to_MySQL_Postgres_and_Redis.load_users_to_MySQL_and_Postgres scheduled__2024-01-14T00:00:00+00:00 [queued]>
+[2024-02-18T04:52:57.628+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 6
+[2024-02-18T04:52:57.669+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): load_users_to_MySQL_and_Postgres> on 2024-01-14 00:00:00+00:00
+[2024-02-18T04:52:57.691+0000] {standard_task_runner.py:60} INFO - Started process 6228 to run task
+[2024-02-18T04:52:57.705+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ETL_From_an_API_to_MySQL_Postgres_and_Redis', 'load_users_to_MySQL_and_Postgres', 'scheduled__2024-01-14T00:00:00+00:00', '--job-id', '670', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmpeb82w_gn']
+[2024-02-18T04:52:57.715+0000] {standard_task_runner.py:88} INFO - Job 670: Subtask load_users_to_MySQL_and_Postgres
+[2024-02-18T04:52:57.986+0000] {task_command.py:423} INFO - Running <TaskInstance: ETL_From_an_API_to_MySQL_Postgres_and_Redis.load_users_to_MySQL_and_Postgres scheduled__2024-01-14T00:00:00+00:00 [running]> on host 091c4b0f3ebe
+[2024-02-18T04:52:58.261+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='ETL_From_an_API_to_MySQL_Postgres_and_Redis' AIRFLOW_CTX_TASK_ID='load_users_to_MySQL_and_Postgres' AIRFLOW_CTX_EXECUTION_DATE='2024-01-14T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-01-14T00:00:00+00:00'
+[2024-02-18T04:52:58.368+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T04:52:58.416+0000] {sql.py:450} INFO - Running statement: SELECT id FROM cities WHERE name = 'Gwenborough';, parameters: None
+[2024-02-18T04:52:58.420+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T04:52:58.459+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T04:52:58.468+0000] {sql.py:450} INFO - Running statement: SELECT id FROM companies WHERE name = 'Romaguera-Crona';, parameters: None
+[2024-02-18T04:52:58.470+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T04:52:58.512+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T04:52:58.552+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO users(name, username, email, address, city_id, zipcode, latitud, longitud, phone, website, company_id) VALUES ('Leanne Graham','Bret','Sincere@april.biz','Kulas Light Apt. 556','7','92998-3874','-37.3159','81.1496','1-770-736-8031 x56442','hildegard.org','1');, parameters: None
+[2024-02-18T04:52:58.560+0000] {sql.py:459} INFO - Rows affected: 0
+[2024-02-18T04:52:58.584+0000] {base.py:83} INFO - Using connection ID 'postgres_connection' for task execution.
+[2024-02-18T04:52:58.605+0000] {sql.py:450} INFO - Running statement: INSERT INTO users (name, username, email, address, city_id, zipcode, latitud, longitud, phone, website, company_id) VALUES ('Leanne Graham','Bret','Sincere@april.biz','Kulas Light Apt. 556','7','92998-3874','-37.3159','81.1496','1-770-736-8031 x56442','hildegard.org','1') ON CONFLICT (email) DO NOTHING;, parameters: None
+[2024-02-18T04:52:58.611+0000] {sql.py:459} INFO - Rows affected: 0
+[2024-02-18T04:52:58.636+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T04:52:58.651+0000] {sql.py:450} INFO - Running statement: SELECT id FROM cities WHERE name = 'Wisokyburgh';, parameters: None
+[2024-02-18T04:52:58.663+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T04:52:58.691+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T04:52:58.707+0000] {sql.py:450} INFO - Running statement: SELECT id FROM companies WHERE name = 'Deckow-Crist';, parameters: None
+[2024-02-18T04:52:58.709+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T04:52:58.735+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T04:52:58.743+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO users(name, username, email, address, city_id, zipcode, latitud, longitud, phone, website, company_id) VALUES ('Ervin Howell','Antonette','Shanna@melissa.tv','Victor Plains Suite 879','5','90566-7771','-43.9509','-34.4618','010-692-6593 x09125','anastasia.net','2');, parameters: None
+[2024-02-18T04:52:58.751+0000] {sql.py:459} INFO - Rows affected: 0
+[2024-02-18T04:52:58.780+0000] {base.py:83} INFO - Using connection ID 'postgres_connection' for task execution.
+[2024-02-18T04:52:58.793+0000] {sql.py:450} INFO - Running statement: INSERT INTO users (name, username, email, address, city_id, zipcode, latitud, longitud, phone, website, company_id) VALUES ('Ervin Howell','Antonette','Shanna@melissa.tv','Victor Plains Suite 879','5','90566-7771','-43.9509','-34.4618','010-692-6593 x09125','anastasia.net','2') ON CONFLICT (email) DO NOTHING;, parameters: None
+[2024-02-18T04:52:58.797+0000] {sql.py:459} INFO - Rows affected: 0
+[2024-02-18T04:52:58.826+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T04:52:58.843+0000] {sql.py:450} INFO - Running statement: SELECT id FROM cities WHERE name = 'McKenziehaven';, parameters: None
+[2024-02-18T04:52:58.847+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T04:52:58.894+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T04:52:58.903+0000] {sql.py:450} INFO - Running statement: SELECT id FROM companies WHERE name = 'Romaguera-Jacobson';, parameters: None
+[2024-02-18T04:52:58.905+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T04:52:58.926+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T04:52:58.933+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO users(name, username, email, address, city_id, zipcode, latitud, longitud, phone, website, company_id) VALUES ('Clementine Bauch','Samantha','Nathan@yesenia.net','Douglas Extension Suite 847','10','59590-4157','-68.6102','-47.0653','1-463-123-4447','ramiro.info','3');, parameters: None
+[2024-02-18T04:52:58.936+0000] {sql.py:459} INFO - Rows affected: 0
+[2024-02-18T04:52:58.966+0000] {base.py:83} INFO - Using connection ID 'postgres_connection' for task execution.
+[2024-02-18T04:52:58.984+0000] {sql.py:450} INFO - Running statement: INSERT INTO users (name, username, email, address, city_id, zipcode, latitud, longitud, phone, website, company_id) VALUES ('Clementine Bauch','Samantha','Nathan@yesenia.net','Douglas Extension Suite 847','10','59590-4157','-68.6102','-47.0653','1-463-123-4447','ramiro.info','3') ON CONFLICT (email) DO NOTHING;, parameters: None
+[2024-02-18T04:52:58.991+0000] {sql.py:459} INFO - Rows affected: 0
+[2024-02-18T04:52:59.009+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T04:52:59.022+0000] {sql.py:450} INFO - Running statement: SELECT id FROM cities WHERE name = 'South Elvis';, parameters: None
+[2024-02-18T04:52:59.026+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T04:52:59.042+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T04:52:59.058+0000] {sql.py:450} INFO - Running statement: SELECT id FROM companies WHERE name = 'Robel-Corkery';, parameters: None
+[2024-02-18T04:52:59.062+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T04:52:59.086+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T04:52:59.110+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO users(name, username, email, address, city_id, zipcode, latitud, longitud, phone, website, company_id) VALUES ('Patricia Lebsack','Karianne','Julianne.OConner@kory.org','Hoeger Mall Apt. 692','4','53919-4257','29.4572','-164.2990','493-170-9623 x156','kale.biz','4');, parameters: None
+[2024-02-18T04:52:59.114+0000] {sql.py:459} INFO - Rows affected: 0
+[2024-02-18T04:52:59.161+0000] {base.py:83} INFO - Using connection ID 'postgres_connection' for task execution.
+[2024-02-18T04:52:59.194+0000] {sql.py:450} INFO - Running statement: INSERT INTO users (name, username, email, address, city_id, zipcode, latitud, longitud, phone, website, company_id) VALUES ('Patricia Lebsack','Karianne','Julianne.OConner@kory.org','Hoeger Mall Apt. 692','4','53919-4257','29.4572','-164.2990','493-170-9623 x156','kale.biz','4') ON CONFLICT (email) DO NOTHING;, parameters: None
+[2024-02-18T04:52:59.198+0000] {sql.py:459} INFO - Rows affected: 0
+[2024-02-18T04:52:59.232+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T04:52:59.239+0000] {sql.py:450} INFO - Running statement: SELECT id FROM cities WHERE name = 'Roscoeview';, parameters: None
+[2024-02-18T04:52:59.241+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T04:52:59.265+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T04:52:59.287+0000] {sql.py:450} INFO - Running statement: SELECT id FROM companies WHERE name = 'Keebler LLC';, parameters: None
+[2024-02-18T04:52:59.289+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T04:52:59.302+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T04:52:59.313+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO users(name, username, email, address, city_id, zipcode, latitud, longitud, phone, website, company_id) VALUES ('Chelsey Dietrich','Kamren','Lucio_Hettinger@annie.ca','Skiles Walks Suite 351','1','33263','-31.8129','62.5342','(254)954-1289','demarco.info','5');, parameters: None
+[2024-02-18T04:52:59.317+0000] {sql.py:459} INFO - Rows affected: 0
+[2024-02-18T04:52:59.334+0000] {base.py:83} INFO - Using connection ID 'postgres_connection' for task execution.
+[2024-02-18T04:52:59.345+0000] {sql.py:450} INFO - Running statement: INSERT INTO users (name, username, email, address, city_id, zipcode, latitud, longitud, phone, website, company_id) VALUES ('Chelsey Dietrich','Kamren','Lucio_Hettinger@annie.ca','Skiles Walks Suite 351','1','33263','-31.8129','62.5342','(254)954-1289','demarco.info','5') ON CONFLICT (email) DO NOTHING;, parameters: None
+[2024-02-18T04:52:59.350+0000] {sql.py:459} INFO - Rows affected: 0
+[2024-02-18T04:52:59.369+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T04:52:59.377+0000] {sql.py:450} INFO - Running statement: SELECT id FROM cities WHERE name = 'South Christy';, parameters: None
+[2024-02-18T04:52:59.379+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T04:52:59.408+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T04:52:59.421+0000] {sql.py:450} INFO - Running statement: SELECT id FROM companies WHERE name = 'Considine-Lockman';, parameters: None
+[2024-02-18T04:52:59.424+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T04:52:59.445+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T04:52:59.453+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO users(name, username, email, address, city_id, zipcode, latitud, longitud, phone, website, company_id) VALUES ('Mrs. Dennis Schulist','Leopoldo_Corkery','Karley_Dach@jasper.info','Norberto Crossing Apt. 950','3','23505-1337','-71.4197','71.7478','1-477-935-8478 x6430','ola.org','6');, parameters: None
+[2024-02-18T04:52:59.456+0000] {sql.py:459} INFO - Rows affected: 0
+[2024-02-18T04:52:59.485+0000] {base.py:83} INFO - Using connection ID 'postgres_connection' for task execution.
+[2024-02-18T04:52:59.498+0000] {sql.py:450} INFO - Running statement: INSERT INTO users (name, username, email, address, city_id, zipcode, latitud, longitud, phone, website, company_id) VALUES ('Mrs. Dennis Schulist','Leopoldo_Corkery','Karley_Dach@jasper.info','Norberto Crossing Apt. 950','3','23505-1337','-71.4197','71.7478','1-477-935-8478 x6430','ola.org','6') ON CONFLICT (email) DO NOTHING;, parameters: None
+[2024-02-18T04:52:59.504+0000] {sql.py:459} INFO - Rows affected: 0
+[2024-02-18T04:52:59.530+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T04:52:59.551+0000] {sql.py:450} INFO - Running statement: SELECT id FROM cities WHERE name = 'Howemouth';, parameters: None
+[2024-02-18T04:52:59.556+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T04:52:59.574+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T04:52:59.581+0000] {sql.py:450} INFO - Running statement: SELECT id FROM companies WHERE name = 'Johns Group';, parameters: None
+[2024-02-18T04:52:59.584+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T04:52:59.613+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T04:52:59.619+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO users(name, username, email, address, city_id, zipcode, latitud, longitud, phone, website, company_id) VALUES ('Kurtis Weissnat','Elwyn.Skiles','Telly.Hoeger@billy.biz','Rex Trail Suite 280','9','58804-1099','24.8918','21.8984','210.067.6132','elvis.io','7');, parameters: None
+[2024-02-18T04:52:59.624+0000] {sql.py:459} INFO - Rows affected: 0
+[2024-02-18T04:52:59.651+0000] {base.py:83} INFO - Using connection ID 'postgres_connection' for task execution.
+[2024-02-18T04:52:59.666+0000] {sql.py:450} INFO - Running statement: INSERT INTO users (name, username, email, address, city_id, zipcode, latitud, longitud, phone, website, company_id) VALUES ('Kurtis Weissnat','Elwyn.Skiles','Telly.Hoeger@billy.biz','Rex Trail Suite 280','9','58804-1099','24.8918','21.8984','210.067.6132','elvis.io','7') ON CONFLICT (email) DO NOTHING;, parameters: None
+[2024-02-18T04:52:59.671+0000] {sql.py:459} INFO - Rows affected: 0
+[2024-02-18T04:52:59.701+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T04:52:59.714+0000] {sql.py:450} INFO - Running statement: SELECT id FROM cities WHERE name = 'Aliyaview';, parameters: None
+[2024-02-18T04:52:59.718+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T04:52:59.734+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T04:52:59.746+0000] {sql.py:450} INFO - Running statement: SELECT id FROM companies WHERE name = 'Abernathy Group';, parameters: None
+[2024-02-18T04:52:59.748+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T04:52:59.774+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T04:52:59.784+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO users(name, username, email, address, city_id, zipcode, latitud, longitud, phone, website, company_id) VALUES ('Nicholas Runolfsdottir V','Maxime_Nienow','Sherwood@rosamond.me','Ellsworth Summit Suite 729','6','45169','-14.3990','-120.7677','586.493.6943 x140','jacynthe.com','8');, parameters: None
+[2024-02-18T04:52:59.793+0000] {sql.py:459} INFO - Rows affected: 0
+[2024-02-18T04:52:59.811+0000] {base.py:83} INFO - Using connection ID 'postgres_connection' for task execution.
+[2024-02-18T04:52:59.827+0000] {sql.py:450} INFO - Running statement: INSERT INTO users (name, username, email, address, city_id, zipcode, latitud, longitud, phone, website, company_id) VALUES ('Nicholas Runolfsdottir V','Maxime_Nienow','Sherwood@rosamond.me','Ellsworth Summit Suite 729','6','45169','-14.3990','-120.7677','586.493.6943 x140','jacynthe.com','8') ON CONFLICT (email) DO NOTHING;, parameters: None
+[2024-02-18T04:52:59.830+0000] {sql.py:459} INFO - Rows affected: 0
+[2024-02-18T04:52:59.852+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T04:52:59.863+0000] {sql.py:450} INFO - Running statement: SELECT id FROM cities WHERE name = 'Bartholomebury';, parameters: None
+[2024-02-18T04:52:59.871+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T04:52:59.901+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T04:52:59.920+0000] {sql.py:450} INFO - Running statement: SELECT id FROM companies WHERE name = 'Yost and Sons';, parameters: None
+[2024-02-18T04:52:59.922+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T04:52:59.953+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T04:52:59.971+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO users(name, username, email, address, city_id, zipcode, latitud, longitud, phone, website, company_id) VALUES ('Glenna Reichert','Delphine','Chaim_McDermott@dana.io','Dayna Park Suite 449','8','76495-3109','24.6463','-168.8889','(775)976-6794 x41206','conrad.com','9');, parameters: None
+[2024-02-18T04:52:59.974+0000] {sql.py:459} INFO - Rows affected: 0
+[2024-02-18T04:53:00.023+0000] {base.py:83} INFO - Using connection ID 'postgres_connection' for task execution.
+[2024-02-18T04:53:00.042+0000] {sql.py:450} INFO - Running statement: INSERT INTO users (name, username, email, address, city_id, zipcode, latitud, longitud, phone, website, company_id) VALUES ('Glenna Reichert','Delphine','Chaim_McDermott@dana.io','Dayna Park Suite 449','8','76495-3109','24.6463','-168.8889','(775)976-6794 x41206','conrad.com','9') ON CONFLICT (email) DO NOTHING;, parameters: None
+[2024-02-18T04:53:00.047+0000] {sql.py:459} INFO - Rows affected: 0
+[2024-02-18T04:53:00.092+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T04:53:00.113+0000] {sql.py:450} INFO - Running statement: SELECT id FROM cities WHERE name = 'Lebsackbury';, parameters: None
+[2024-02-18T04:53:00.116+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T04:53:00.139+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T04:53:00.150+0000] {sql.py:450} INFO - Running statement: SELECT id FROM companies WHERE name = 'Hoeger LLC';, parameters: None
+[2024-02-18T04:53:00.153+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T04:53:00.169+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T04:53:00.182+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO users(name, username, email, address, city_id, zipcode, latitud, longitud, phone, website, company_id) VALUES ('Clementina DuBuque','Moriah.Stanton','Rey.Padberg@karina.biz','Kattie Turnpike Suite 198','2','31428-2261','-38.2386','57.2232','024-648-3804','ambrose.net','10');, parameters: None
+[2024-02-18T04:53:00.185+0000] {sql.py:459} INFO - Rows affected: 0
+[2024-02-18T04:53:00.206+0000] {base.py:83} INFO - Using connection ID 'postgres_connection' for task execution.
+[2024-02-18T04:53:00.221+0000] {sql.py:450} INFO - Running statement: INSERT INTO users (name, username, email, address, city_id, zipcode, latitud, longitud, phone, website, company_id) VALUES ('Clementina DuBuque','Moriah.Stanton','Rey.Padberg@karina.biz','Kattie Turnpike Suite 198','2','31428-2261','-38.2386','57.2232','024-648-3804','ambrose.net','10') ON CONFLICT (email) DO NOTHING;, parameters: None
+[2024-02-18T04:53:00.224+0000] {sql.py:459} INFO - Rows affected: 0
+[2024-02-18T04:53:00.227+0000] {python.py:201} INFO - Done. Returned value was: None
+[2024-02-18T04:53:00.253+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ETL_From_an_API_to_MySQL_Postgres_and_Redis, task_id=load_users_to_MySQL_and_Postgres, execution_date=20240114T000000, start_date=20240218T045257, end_date=20240218T045300
+[2024-02-18T04:53:00.341+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-18T04:53:00.401+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

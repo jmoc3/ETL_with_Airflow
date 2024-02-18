@@ -1,0 +1,32 @@
+[2024-02-18T04:38:06.222+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.companies_table_creation scheduled__2024-02-11T00:00:00+00:00 [queued]>
+[2024-02-18T04:38:06.246+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.companies_table_creation scheduled__2024-02-11T00:00:00+00:00 [queued]>
+[2024-02-18T04:38:06.247+0000] {taskinstance.py:2170} INFO - Starting attempt 3 of 8
+[2024-02-18T04:38:06.277+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): companies_table_creation> on 2024-02-11 00:00:00+00:00
+[2024-02-18T04:38:06.285+0000] {standard_task_runner.py:60} INFO - Started process 5723 to run task
+[2024-02-18T04:38:06.293+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Read_and_load_of_API_to_MySQLDB', 'companies_table_creation', 'scheduled__2024-02-11T00:00:00+00:00', '--job-id', '576', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmpd0bd68ox']
+[2024-02-18T04:38:06.298+0000] {standard_task_runner.py:88} INFO - Job 576: Subtask companies_table_creation
+[2024-02-18T04:38:06.455+0000] {task_command.py:423} INFO - Running <TaskInstance: Read_and_load_of_API_to_MySQLDB.companies_table_creation scheduled__2024-02-11T00:00:00+00:00 [running]> on host 091c4b0f3ebe
+[2024-02-18T04:38:06.753+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='Read_and_load_of_API_to_MySQLDB' AIRFLOW_CTX_TASK_ID='companies_table_creation' AIRFLOW_CTX_EXECUTION_DATE='2024-02-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-02-11T00:00:00+00:00'
+[2024-02-18T04:38:06.784+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T04:38:06.956+0000] {sql.py:450} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS companies(
+              id INT AUTO_INCREMENT  PRIMARY KEY NOT NULL,
+              name VARCHAR(25) NOT NULL UNIQUE  ,
+              catchPhrase VARCHAR(225) NOT NULL,
+              bs VARCHAR(50) NOT NULL 
+            );
+            , parameters: None
+[2024-02-18T04:38:06.996+0000] {sql.py:459} INFO - Rows affected: 0
+[2024-02-18T04:38:07.013+0000] {base.py:83} INFO - Using connection ID 'postgres_connection' for task execution.
+[2024-02-18T04:38:07.023+0000] {sql.py:450} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS companies(
+              id BIGSERIAL PRIMARY KEY NOT NULL,
+              name VARCHAR(25) NOT NULL UNIQUE  ,
+              catchPhrase VARCHAR(225) NOT NULL,
+              bs VARCHAR(50) NOT NULL 
+            );
+            , parameters: None
+[2024-02-18T04:38:07.036+0000] {python.py:201} INFO - Done. Returned value was: None
+[2024-02-18T04:38:07.056+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=Read_and_load_of_API_to_MySQLDB, task_id=companies_table_creation, execution_date=20240211T000000, start_date=20240218T043806, end_date=20240218T043807
+[2024-02-18T04:38:07.133+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-18T04:38:07.196+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

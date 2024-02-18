@@ -1,0 +1,55 @@
+[2024-02-17T22:09:32.686+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.companies_table scheduled__2024-02-04T00:00:00+00:00 [queued]>
+[2024-02-17T22:09:32.716+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.companies_table scheduled__2024-02-04T00:00:00+00:00 [queued]>
+[2024-02-17T22:09:32.719+0000] {taskinstance.py:2170} INFO - Starting attempt 38 of 38
+[2024-02-17T22:09:32.767+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): companies_table> on 2024-02-04 00:00:00+00:00
+[2024-02-17T22:09:32.782+0000] {standard_task_runner.py:60} INFO - Started process 479 to run task
+[2024-02-17T22:09:32.795+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Read_and_load_of_API_to_MySQLDB', 'companies_table', 'scheduled__2024-02-04T00:00:00+00:00', '--job-id', '465', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmp6urmvc4v']
+[2024-02-17T22:09:32.800+0000] {standard_task_runner.py:88} INFO - Job 465: Subtask companies_table
+[2024-02-17T22:09:32.924+0000] {task_command.py:423} INFO - Running <TaskInstance: Read_and_load_of_API_to_MySQLDB.companies_table scheduled__2024-02-04T00:00:00+00:00 [running]> on host 7f8d399e30ff
+[2024-02-17T22:09:33.150+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='Read_and_load_of_API_to_MySQLDB' AIRFLOW_CTX_TASK_ID='companies_table' AIRFLOW_CTX_EXECUTION_DATE='2024-02-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='38' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-02-04T00:00:00+00:00'
+[2024-02-17T22:09:33.180+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-17T22:09:33.218+0000] {sql.py:450} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS ***.companies(
+              id INT AUTO_INCREMENT  PRIMARY KEY NOT NULL,
+              name VARCHAR(25) NOT NULL UNIQUE  ,
+              catchPhrase VARCHAR(225) NOT NULL,
+              bs VARCHAR(50) NOT NULL 
+            );
+            , parameters: None
+[2024-02-17T22:09:33.226+0000] {sql.py:459} INFO - Rows affected: 0
+[2024-02-17T22:09:33.240+0000] {base.py:83} INFO - Using connection ID 'postgres_connection' for task execution.
+[2024-02-17T22:09:33.251+0000] {sql.py:450} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS ***.companies(
+              id BIGSERIAL PRIMARY KEY NOT NULL,
+              name VARCHAR(25) NOT NULL UNIQUE  ,
+              catchPhrase VARCHAR(225) NOT NULL,
+              bs VARCHAR(50) NOT NULL 
+            );
+            , parameters: None
+[2024-02-17T22:09:33.254+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 241, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/CRM.py", line 47, in companies_table
+    postgres_hook.run(db.companies_c('postgres'))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 398, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 455, in _run_command
+    cur.execute(sql_statement)
+psycopg2.errors.InvalidSchemaName: schema "***" does not exist
+LINE 2:             CREATE TABLE IF NOT EXISTS ***.companies(
+                                               ^
+
+[2024-02-17T22:09:33.283+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=Read_and_load_of_API_to_MySQLDB, task_id=companies_table, execution_date=20240204T000000, start_date=20240217T220932, end_date=20240217T220933
+[2024-02-17T22:09:33.316+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 465 for task companies_table (schema "***" does not exist
+LINE 2:             CREATE TABLE IF NOT EXISTS ***.companies(
+                                               ^
+; 479)
+[2024-02-17T22:09:33.370+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-02-17T22:09:33.418+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

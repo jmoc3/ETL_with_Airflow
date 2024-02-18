@@ -1,0 +1,42 @@
+[2024-02-18T01:42:06.971+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_users_registers scheduled__2024-02-11T00:00:00+00:00 [queued]>
+[2024-02-18T01:42:07.027+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_users_registers scheduled__2024-02-11T00:00:00+00:00 [queued]>
+[2024-02-18T01:42:07.051+0000] {taskinstance.py:2170} INFO - Starting attempt 3 of 6
+[2024-02-18T01:42:07.229+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): Load_users_registers> on 2024-02-11 00:00:00+00:00
+[2024-02-18T01:42:07.299+0000] {standard_task_runner.py:60} INFO - Started process 1745 to run task
+[2024-02-18T01:42:07.340+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Read_and_load_of_API_to_MySQLDB', 'Load_users_registers', 'scheduled__2024-02-11T00:00:00+00:00', '--job-id', '514', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmp76kqpuv4']
+[2024-02-18T01:42:07.380+0000] {standard_task_runner.py:88} INFO - Job 514: Subtask Load_users_registers
+[2024-02-18T01:42:09.525+0000] {task_command.py:423} INFO - Running <TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_users_registers scheduled__2024-02-11T00:00:00+00:00 [running]> on host 091c4b0f3ebe
+[2024-02-18T01:42:09.842+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='Read_and_load_of_API_to_MySQLDB' AIRFLOW_CTX_TASK_ID='Load_users_registers' AIRFLOW_CTX_EXECUTION_DATE='2024-02-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-02-11T00:00:00+00:00'
+[2024-02-18T01:42:09.919+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T01:42:10.334+0000] {sql.py:450} INFO - Running statement: SELECT id FROM cities WHERE name = 'Gwenborough';, parameters: None
+[2024-02-18T01:42:10.423+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 241, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/CRM.py", line 91, in Load_users_registers
+    city_id = City.findId(x['address']['city'])
+  File "/opt/airflow/dags/models/City.py", line 20, in findId
+    res = hook.get_records(mysql_statement)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 261, in get_records
+    return self.run(sql=sql, parameters=parameters, handler=fetch_all_handler)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 398, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 455, in _run_command
+    cur.execute(sql_statement)
+  File "/home/airflow/.local/lib/python3.8/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/home/airflow/.local/lib/python3.8/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+  File "/home/airflow/.local/lib/python3.8/site-packages/MySQLdb/connections.py", line 257, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table '***.cities' doesn't exist")
+[2024-02-18T01:42:10.547+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=Read_and_load_of_API_to_MySQLDB, task_id=Load_users_registers, execution_date=20240211T000000, start_date=20240218T014206, end_date=20240218T014210
+[2024-02-18T01:42:10.616+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 514 for task Load_users_registers ((1146, "Table '***.cities' doesn't exist"); 1745)
+[2024-02-18T01:42:10.636+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-02-18T01:42:10.708+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

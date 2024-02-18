@@ -1,8 +1,8 @@
 class airflow_PI():
 
   def __init__(self):
-    self.__sql_create_command =  """CREATE DATABASE IF NOT EXISTS airflow_PI;"""
-    self.__name = 'airflow_PI'
+    self.__sql_create_command =  """CREATE DATABASE IF NOT EXISTS airflow;"""
+    self.__name = 'airflow'
 
   def get_name(self):
     return self.__name
@@ -13,8 +13,9 @@ class airflow_PI():
   def cities_c(self,dbm='MySQL'):
 
     id_type = 'BIGSERIAL' if dbm == 'postgres' else 'INT AUTO_INCREMENT '
+
     return f"""
-            CREATE TABLE IF NOT EXISTS {self.__name}.cities(
+            CREATE TABLE IF NOT EXISTS cities(
               id {id_type} PRIMARY KEY NOT NULL,
               name VARCHAR(25) NOT NULL UNIQUE  
             );
@@ -24,8 +25,9 @@ class airflow_PI():
   def companies_c(self,dbm='MySQL'):
 
     id_type = 'BIGSERIAL' if dbm == 'postgres' else 'INT AUTO_INCREMENT '
+
     return  f"""
-            CREATE TABLE IF NOT EXISTS {self.__name}.companies(
+            CREATE TABLE IF NOT EXISTS companies(
               id {id_type} PRIMARY KEY NOT NULL,
               name VARCHAR(25) NOT NULL UNIQUE  ,
               catchPhrase VARCHAR(225) NOT NULL,
@@ -36,10 +38,9 @@ class airflow_PI():
   def users_c(self,dbm='MySQL'):
 
     id_type = 'BIGSERIAL' if dbm == 'postgres' else 'INT AUTO_INCREMENT '
-    clause = 'IF NOT EXIST' if dbm == 'postgres' else 'INT AUTO_INCREMENT '
 
     return f"""
-            CREATE TABLE IF NOT EXISTS {self.__name}.users(
+            CREATE TABLE IF NOT EXISTS users(
               id {id_type} PRIMARY KEY NOT NULL,
               name VARCHAR(25) NOT NULL,
               username VARCHAR(25) NOT NULL,
@@ -49,7 +50,7 @@ class airflow_PI():
               zipcode VARCHAR(10),
               latitud VARCHAR(20),
               longitud VARCHAR(20),
-              phone VARCHAR(15),
+              phone VARCHAR(30),
               website VARCHAR(50),
               company_id INT,
               FOREIGN KEY (city_id) REFERENCES cities(id),

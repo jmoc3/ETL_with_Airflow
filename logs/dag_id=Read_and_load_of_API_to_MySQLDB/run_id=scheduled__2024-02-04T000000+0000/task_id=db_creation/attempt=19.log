@@ -1,0 +1,35 @@
+[2024-02-17T21:43:44.535+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.db_creation scheduled__2024-02-04T00:00:00+00:00 [queued]>
+[2024-02-17T21:43:44.553+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.db_creation scheduled__2024-02-04T00:00:00+00:00 [queued]>
+[2024-02-17T21:43:44.554+0000] {taskinstance.py:2170} INFO - Starting attempt 19 of 21
+[2024-02-17T21:43:44.585+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): db_creation> on 2024-02-04 00:00:00+00:00
+[2024-02-17T21:43:44.592+0000] {standard_task_runner.py:60} INFO - Started process 494 to run task
+[2024-02-17T21:43:44.598+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Read_and_load_of_API_to_MySQLDB', 'db_creation', 'scheduled__2024-02-04T00:00:00+00:00', '--job-id', '447', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmpcvpvkrc4']
+[2024-02-17T21:43:44.602+0000] {standard_task_runner.py:88} INFO - Job 447: Subtask db_creation
+[2024-02-17T21:43:44.683+0000] {task_command.py:423} INFO - Running <TaskInstance: Read_and_load_of_API_to_MySQLDB.db_creation scheduled__2024-02-04T00:00:00+00:00 [running]> on host dc3e664d1cbb
+[2024-02-17T21:43:44.829+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='Read_and_load_of_API_to_MySQLDB' AIRFLOW_CTX_TASK_ID='db_creation' AIRFLOW_CTX_EXECUTION_DATE='2024-02-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='19' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-02-04T00:00:00+00:00'
+[2024-02-17T21:43:44.855+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-17T21:44:04.910+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 241, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/CRM.py", line 37, in db_creation
+    mysql_hook.run(db.get_sql_command())
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 391, in run
+    with closing(self.get_conn()) as conn:
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/mysql/hooks/mysql.py", line 195, in get_conn
+    return MySQLdb.connect(**conn_config)
+  File "/home/airflow/.local/lib/python3.8/site-packages/MySQLdb/__init__.py", line 121, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super().__init__(*args, **kwargs2)
+MySQLdb.OperationalError: (2002, "Can't connect to server on 'mysql' (115)")
+[2024-02-17T21:44:05.012+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=Read_and_load_of_API_to_MySQLDB, task_id=db_creation, execution_date=20240204T000000, start_date=20240217T214344, end_date=20240217T214405
+[2024-02-17T21:44:05.084+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 447 for task db_creation ((2002, "Can't connect to server on 'mysql' (115)"); 494)
+[2024-02-17T21:44:05.192+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-02-17T21:44:05.439+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

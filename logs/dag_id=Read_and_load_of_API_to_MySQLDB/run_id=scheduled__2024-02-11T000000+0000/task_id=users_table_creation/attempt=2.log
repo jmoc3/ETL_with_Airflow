@@ -1,0 +1,52 @@
+[2024-02-18T04:38:08.714+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.users_table_creation scheduled__2024-02-11T00:00:00+00:00 [queued]>
+[2024-02-18T04:38:08.737+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.users_table_creation scheduled__2024-02-11T00:00:00+00:00 [queued]>
+[2024-02-18T04:38:08.738+0000] {taskinstance.py:2170} INFO - Starting attempt 2 of 7
+[2024-02-18T04:38:08.770+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): users_table_creation> on 2024-02-11 00:00:00+00:00
+[2024-02-18T04:38:08.778+0000] {standard_task_runner.py:60} INFO - Started process 5729 to run task
+[2024-02-18T04:38:08.783+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Read_and_load_of_API_to_MySQLDB', 'users_table_creation', 'scheduled__2024-02-11T00:00:00+00:00', '--job-id', '577', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmpb_b83or6']
+[2024-02-18T04:38:08.787+0000] {standard_task_runner.py:88} INFO - Job 577: Subtask users_table_creation
+[2024-02-18T04:38:08.891+0000] {task_command.py:423} INFO - Running <TaskInstance: Read_and_load_of_API_to_MySQLDB.users_table_creation scheduled__2024-02-11T00:00:00+00:00 [running]> on host 091c4b0f3ebe
+[2024-02-18T04:38:09.078+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='Read_and_load_of_API_to_MySQLDB' AIRFLOW_CTX_TASK_ID='users_table_creation' AIRFLOW_CTX_EXECUTION_DATE='2024-02-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-02-11T00:00:00+00:00'
+[2024-02-18T04:38:09.096+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T04:38:09.116+0000] {sql.py:450} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS users(
+              id INT AUTO_INCREMENT  PRIMARY KEY NOT NULL,
+              name VARCHAR(25) NOT NULL,
+              username VARCHAR(25) NOT NULL,
+              email VARCHAR(255) NOT NULL UNIQUE,
+              address VARCHAR(50),
+              city_id INT,
+              zipcode VARCHAR(10),
+              latitud VARCHAR(20),
+              longitud VARCHAR(20),
+              phone VARCHAR(30),
+              website VARCHAR(50),
+              company_id INT,
+              FOREIGN KEY (city_id) REFERENCES cities(id),
+              FOREIGN KEY (company_id) REFERENCES companies(id)
+            );
+            , parameters: None
+[2024-02-18T04:38:09.122+0000] {sql.py:459} INFO - Rows affected: 0
+[2024-02-18T04:38:09.135+0000] {base.py:83} INFO - Using connection ID 'postgres_connection' for task execution.
+[2024-02-18T04:38:09.143+0000] {sql.py:450} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS users(
+              id BIGSERIAL PRIMARY KEY NOT NULL,
+              name VARCHAR(25) NOT NULL,
+              username VARCHAR(25) NOT NULL,
+              email VARCHAR(255) NOT NULL UNIQUE,
+              address VARCHAR(50),
+              city_id INT,
+              zipcode VARCHAR(10),
+              latitud VARCHAR(20),
+              longitud VARCHAR(20),
+              phone VARCHAR(30),
+              website VARCHAR(50),
+              company_id INT,
+              FOREIGN KEY (city_id) REFERENCES cities(id),
+              FOREIGN KEY (company_id) REFERENCES companies(id)
+            );
+            , parameters: None
+[2024-02-18T04:38:09.148+0000] {python.py:201} INFO - Done. Returned value was: None
+[2024-02-18T04:38:09.165+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=Read_and_load_of_API_to_MySQLDB, task_id=users_table_creation, execution_date=20240211T000000, start_date=20240218T043808, end_date=20240218T043809
+[2024-02-18T04:38:09.238+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-18T04:38:09.288+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

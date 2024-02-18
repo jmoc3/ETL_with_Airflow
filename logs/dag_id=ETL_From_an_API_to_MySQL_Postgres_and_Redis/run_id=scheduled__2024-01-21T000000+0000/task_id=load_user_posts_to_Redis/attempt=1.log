@@ -1,0 +1,14 @@
+[2024-02-18T04:53:34.309+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL_From_an_API_to_MySQL_Postgres_and_Redis.load_user_posts_to_Redis scheduled__2024-01-21T00:00:00+00:00 [queued]>
+[2024-02-18T04:53:34.347+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL_From_an_API_to_MySQL_Postgres_and_Redis.load_user_posts_to_Redis scheduled__2024-01-21T00:00:00+00:00 [queued]>
+[2024-02-18T04:53:34.349+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 6
+[2024-02-18T04:53:34.390+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): load_user_posts_to_Redis> on 2024-01-21 00:00:00+00:00
+[2024-02-18T04:53:34.399+0000] {standard_task_runner.py:60} INFO - Started process 6272 to run task
+[2024-02-18T04:53:34.406+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ETL_From_an_API_to_MySQL_Postgres_and_Redis', 'load_user_posts_to_Redis', 'scheduled__2024-01-21T00:00:00+00:00', '--job-id', '683', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmp5zwt1h7j']
+[2024-02-18T04:53:34.412+0000] {standard_task_runner.py:88} INFO - Job 683: Subtask load_user_posts_to_Redis
+[2024-02-18T04:53:34.569+0000] {task_command.py:423} INFO - Running <TaskInstance: ETL_From_an_API_to_MySQL_Postgres_and_Redis.load_user_posts_to_Redis scheduled__2024-01-21T00:00:00+00:00 [running]> on host 091c4b0f3ebe
+[2024-02-18T04:53:34.967+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='ETL_From_an_API_to_MySQL_Postgres_and_Redis' AIRFLOW_CTX_TASK_ID='load_user_posts_to_Redis' AIRFLOW_CTX_EXECUTION_DATE='2024-01-21T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-01-21T00:00:00+00:00'
+[2024-02-18T04:53:35.488+0000] {base.py:83} INFO - Using connection ID 'redis_connection' for task execution.
+[2024-02-18T04:53:35.495+0000] {python.py:201} INFO - Done. Returned value was: None
+[2024-02-18T04:53:35.517+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ETL_From_an_API_to_MySQL_Postgres_and_Redis, task_id=load_user_posts_to_Redis, execution_date=20240121T000000, start_date=20240218T045334, end_date=20240218T045335
+[2024-02-18T04:53:35.611+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-18T04:53:35.680+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

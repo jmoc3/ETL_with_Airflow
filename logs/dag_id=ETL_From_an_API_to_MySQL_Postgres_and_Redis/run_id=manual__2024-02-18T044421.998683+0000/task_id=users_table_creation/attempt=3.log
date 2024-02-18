@@ -1,0 +1,52 @@
+[2024-02-18T04:51:44.862+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL_From_an_API_to_MySQL_Postgres_and_Redis.users_table_creation manual__2024-02-18T04:44:21.998683+00:00 [queued]>
+[2024-02-18T04:51:44.889+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL_From_an_API_to_MySQL_Postgres_and_Redis.users_table_creation manual__2024-02-18T04:44:21.998683+00:00 [queued]>
+[2024-02-18T04:51:44.891+0000] {taskinstance.py:2170} INFO - Starting attempt 3 of 8
+[2024-02-18T04:51:44.941+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): users_table_creation> on 2024-02-18 04:44:21.998683+00:00
+[2024-02-18T04:51:44.951+0000] {standard_task_runner.py:60} INFO - Started process 6176 to run task
+[2024-02-18T04:51:44.957+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ETL_From_an_API_to_MySQL_Postgres_and_Redis', 'users_table_creation', 'manual__2024-02-18T04:44:21.998683+00:00', '--job-id', '656', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmplrzr9mqg']
+[2024-02-18T04:51:44.961+0000] {standard_task_runner.py:88} INFO - Job 656: Subtask users_table_creation
+[2024-02-18T04:51:45.079+0000] {task_command.py:423} INFO - Running <TaskInstance: ETL_From_an_API_to_MySQL_Postgres_and_Redis.users_table_creation manual__2024-02-18T04:44:21.998683+00:00 [running]> on host 091c4b0f3ebe
+[2024-02-18T04:51:45.278+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='ETL_From_an_API_to_MySQL_Postgres_and_Redis' AIRFLOW_CTX_TASK_ID='users_table_creation' AIRFLOW_CTX_EXECUTION_DATE='2024-02-18T04:44:21.998683+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-02-18T04:44:21.998683+00:00'
+[2024-02-18T04:51:45.321+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T04:51:45.358+0000] {sql.py:450} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS users(
+              id INT AUTO_INCREMENT  PRIMARY KEY NOT NULL,
+              name VARCHAR(25) NOT NULL,
+              username VARCHAR(25) NOT NULL,
+              email VARCHAR(255) NOT NULL UNIQUE,
+              address VARCHAR(50),
+              city_id INT,
+              zipcode VARCHAR(10),
+              latitud VARCHAR(20),
+              longitud VARCHAR(20),
+              phone VARCHAR(30),
+              website VARCHAR(50),
+              company_id INT,
+              FOREIGN KEY (city_id) REFERENCES cities(id),
+              FOREIGN KEY (company_id) REFERENCES companies(id)
+            );
+            , parameters: None
+[2024-02-18T04:51:45.366+0000] {sql.py:459} INFO - Rows affected: 0
+[2024-02-18T04:51:45.383+0000] {base.py:83} INFO - Using connection ID 'postgres_connection' for task execution.
+[2024-02-18T04:51:45.398+0000] {sql.py:450} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS users(
+              id BIGSERIAL PRIMARY KEY NOT NULL,
+              name VARCHAR(25) NOT NULL,
+              username VARCHAR(25) NOT NULL,
+              email VARCHAR(255) NOT NULL UNIQUE,
+              address VARCHAR(50),
+              city_id INT,
+              zipcode VARCHAR(10),
+              latitud VARCHAR(20),
+              longitud VARCHAR(20),
+              phone VARCHAR(30),
+              website VARCHAR(50),
+              company_id INT,
+              FOREIGN KEY (city_id) REFERENCES cities(id),
+              FOREIGN KEY (company_id) REFERENCES companies(id)
+            );
+            , parameters: None
+[2024-02-18T04:51:45.401+0000] {python.py:201} INFO - Done. Returned value was: None
+[2024-02-18T04:51:45.434+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ETL_From_an_API_to_MySQL_Postgres_and_Redis, task_id=users_table_creation, execution_date=20240218T044421, start_date=20240218T045144, end_date=20240218T045145
+[2024-02-18T04:51:45.497+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-18T04:51:45.565+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

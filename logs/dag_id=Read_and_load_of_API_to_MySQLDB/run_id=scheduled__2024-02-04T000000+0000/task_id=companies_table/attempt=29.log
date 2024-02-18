@@ -1,0 +1,35 @@
+[2024-02-16T21:22:32.710+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.companies_table scheduled__2024-02-04T00:00:00+00:00 [queued]>
+[2024-02-16T21:22:32.767+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.companies_table scheduled__2024-02-04T00:00:00+00:00 [queued]>
+[2024-02-16T21:22:32.768+0000] {taskinstance.py:2170} INFO - Starting attempt 29 of 32
+[2024-02-16T21:22:32.813+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): companies_table> on 2024-02-04 00:00:00+00:00
+[2024-02-16T21:22:32.822+0000] {standard_task_runner.py:60} INFO - Started process 368 to run task
+[2024-02-16T21:22:32.829+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Read_and_load_of_API_to_MySQLDB', 'companies_table', 'scheduled__2024-02-04T00:00:00+00:00', '--job-id', '432', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmpnukk6ymz']
+[2024-02-16T21:22:32.834+0000] {standard_task_runner.py:88} INFO - Job 432: Subtask companies_table
+[2024-02-16T21:22:33.041+0000] {task_command.py:423} INFO - Running <TaskInstance: Read_and_load_of_API_to_MySQLDB.companies_table scheduled__2024-02-04T00:00:00+00:00 [running]> on host a4160a6d775c
+[2024-02-16T21:22:33.353+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='Read_and_load_of_API_to_MySQLDB' AIRFLOW_CTX_TASK_ID='companies_table' AIRFLOW_CTX_EXECUTION_DATE='2024-02-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='29' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-02-04T00:00:00+00:00'
+[2024-02-16T21:22:33.443+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-16T21:22:33.759+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 241, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/CRM.py", line 46, in companies_table
+    mysql_hook.run(db.companies_c())
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 391, in run
+    with closing(self.get_conn()) as conn:
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/mysql/hooks/mysql.py", line 195, in get_conn
+    return MySQLdb.connect(**conn_config)
+  File "/home/airflow/.local/lib/python3.8/site-packages/MySQLdb/__init__.py", line 121, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super().__init__(*args, **kwargs2)
+MySQLdb.OperationalError: (1045, "Access denied for user 'root'@'172.20.0.6' (using password: YES)")
+[2024-02-16T21:22:33.812+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=Read_and_load_of_API_to_MySQLDB, task_id=companies_table, execution_date=20240204T000000, start_date=20240216T212232, end_date=20240216T212233
+[2024-02-16T21:22:33.860+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 432 for task companies_table ((1045, "Access denied for user 'root'@'172.20.0.6' (using password: YES)"); 368)
+[2024-02-16T21:22:33.898+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-02-16T21:22:33.967+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,73 @@
+[2024-02-18T02:02:14.863+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_companies_registers scheduled__2024-02-11T00:00:00+00:00 [queued]>
+[2024-02-18T02:02:14.892+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_companies_registers scheduled__2024-02-11T00:00:00+00:00 [queued]>
+[2024-02-18T02:02:14.895+0000] {taskinstance.py:2170} INFO - Starting attempt 10 of 15
+[2024-02-18T02:02:14.935+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): Load_companies_registers> on 2024-02-11 00:00:00+00:00
+[2024-02-18T02:02:14.947+0000] {standard_task_runner.py:60} INFO - Started process 2247 to run task
+[2024-02-18T02:02:14.955+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Read_and_load_of_API_to_MySQLDB', 'Load_companies_registers', 'scheduled__2024-02-11T00:00:00+00:00', '--job-id', '552', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmppsyw6f0w']
+[2024-02-18T02:02:14.959+0000] {standard_task_runner.py:88} INFO - Job 552: Subtask Load_companies_registers
+[2024-02-18T02:02:15.077+0000] {task_command.py:423} INFO - Running <TaskInstance: Read_and_load_of_API_to_MySQLDB.Load_companies_registers scheduled__2024-02-11T00:00:00+00:00 [running]> on host 091c4b0f3ebe
+[2024-02-18T02:02:15.411+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='Read_and_load_of_API_to_MySQLDB' AIRFLOW_CTX_TASK_ID='Load_companies_registers' AIRFLOW_CTX_EXECUTION_DATE='2024-02-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='10' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-02-11T00:00:00+00:00'
+[2024-02-18T02:02:15.477+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T02:02:15.673+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO companies(name, catchPhrase, bs) VALUES ('Romaguera-Crona','Multi-layered client-server neural-net', 'harness real-time e-markets');, parameters: None
+[2024-02-18T02:02:15.781+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:15.858+0000] {base.py:83} INFO - Using connection ID 'postgres_connection' for task execution.
+[2024-02-18T02:02:15.882+0000] {sql.py:450} INFO - Running statement: INSERT INTO companies(name, catchPhrase, bs) VALUES ('Romaguera-Crona','Multi-layered client-server neural-net', 'harness real-time e-markets') ON CONFLICT DO NOTHING;, parameters: None
+[2024-02-18T02:02:15.895+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:15.925+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T02:02:15.939+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO companies(name, catchPhrase, bs) VALUES ('Deckow-Crist','Proactive didactic contingency', 'synergize scalable supply-chains');, parameters: None
+[2024-02-18T02:02:15.943+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:15.981+0000] {base.py:83} INFO - Using connection ID 'postgres_connection' for task execution.
+[2024-02-18T02:02:15.994+0000] {sql.py:450} INFO - Running statement: INSERT INTO companies(name, catchPhrase, bs) VALUES ('Deckow-Crist','Proactive didactic contingency', 'synergize scalable supply-chains') ON CONFLICT DO NOTHING;, parameters: None
+[2024-02-18T02:02:15.997+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:16.037+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T02:02:16.049+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO companies(name, catchPhrase, bs) VALUES ('Romaguera-Jacobson','Face to face bifurcated interface', 'e-enable strategic applications');, parameters: None
+[2024-02-18T02:02:16.057+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:16.093+0000] {base.py:83} INFO - Using connection ID 'postgres_connection' for task execution.
+[2024-02-18T02:02:16.115+0000] {sql.py:450} INFO - Running statement: INSERT INTO companies(name, catchPhrase, bs) VALUES ('Romaguera-Jacobson','Face to face bifurcated interface', 'e-enable strategic applications') ON CONFLICT DO NOTHING;, parameters: None
+[2024-02-18T02:02:16.119+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:16.159+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T02:02:16.174+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO companies(name, catchPhrase, bs) VALUES ('Robel-Corkery','Multi-tiered zero tolerance productivity', 'transition cutting-edge web services');, parameters: None
+[2024-02-18T02:02:16.177+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:16.205+0000] {base.py:83} INFO - Using connection ID 'postgres_connection' for task execution.
+[2024-02-18T02:02:16.230+0000] {sql.py:450} INFO - Running statement: INSERT INTO companies(name, catchPhrase, bs) VALUES ('Robel-Corkery','Multi-tiered zero tolerance productivity', 'transition cutting-edge web services') ON CONFLICT DO NOTHING;, parameters: None
+[2024-02-18T02:02:16.236+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:16.271+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T02:02:16.309+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO companies(name, catchPhrase, bs) VALUES ('Keebler LLC','User-centric fault-tolerant solution', 'revolutionize end-to-end systems');, parameters: None
+[2024-02-18T02:02:16.314+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:16.375+0000] {base.py:83} INFO - Using connection ID 'postgres_connection' for task execution.
+[2024-02-18T02:02:16.406+0000] {sql.py:450} INFO - Running statement: INSERT INTO companies(name, catchPhrase, bs) VALUES ('Keebler LLC','User-centric fault-tolerant solution', 'revolutionize end-to-end systems') ON CONFLICT DO NOTHING;, parameters: None
+[2024-02-18T02:02:16.412+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:16.463+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T02:02:16.486+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO companies(name, catchPhrase, bs) VALUES ('Considine-Lockman','Synchronised bottom-line interface', 'e-enable innovative applications');, parameters: None
+[2024-02-18T02:02:16.491+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:16.521+0000] {base.py:83} INFO - Using connection ID 'postgres_connection' for task execution.
+[2024-02-18T02:02:16.532+0000] {sql.py:450} INFO - Running statement: INSERT INTO companies(name, catchPhrase, bs) VALUES ('Considine-Lockman','Synchronised bottom-line interface', 'e-enable innovative applications') ON CONFLICT DO NOTHING;, parameters: None
+[2024-02-18T02:02:16.541+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:16.567+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T02:02:16.577+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO companies(name, catchPhrase, bs) VALUES ('Johns Group','Configurable multimedia task-force', 'generate enterprise e-tailers');, parameters: None
+[2024-02-18T02:02:16.580+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:16.617+0000] {base.py:83} INFO - Using connection ID 'postgres_connection' for task execution.
+[2024-02-18T02:02:16.631+0000] {sql.py:450} INFO - Running statement: INSERT INTO companies(name, catchPhrase, bs) VALUES ('Johns Group','Configurable multimedia task-force', 'generate enterprise e-tailers') ON CONFLICT DO NOTHING;, parameters: None
+[2024-02-18T02:02:16.636+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:16.662+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T02:02:16.671+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO companies(name, catchPhrase, bs) VALUES ('Abernathy Group','Implemented secondary concept', 'e-enable extensible e-tailers');, parameters: None
+[2024-02-18T02:02:16.673+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:16.695+0000] {base.py:83} INFO - Using connection ID 'postgres_connection' for task execution.
+[2024-02-18T02:02:16.707+0000] {sql.py:450} INFO - Running statement: INSERT INTO companies(name, catchPhrase, bs) VALUES ('Abernathy Group','Implemented secondary concept', 'e-enable extensible e-tailers') ON CONFLICT DO NOTHING;, parameters: None
+[2024-02-18T02:02:16.714+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:16.734+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T02:02:16.744+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO companies(name, catchPhrase, bs) VALUES ('Yost and Sons','Switchable contextually-based project', 'aggregate real-time technologies');, parameters: None
+[2024-02-18T02:02:16.746+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:16.769+0000] {base.py:83} INFO - Using connection ID 'postgres_connection' for task execution.
+[2024-02-18T02:02:16.778+0000] {sql.py:450} INFO - Running statement: INSERT INTO companies(name, catchPhrase, bs) VALUES ('Yost and Sons','Switchable contextually-based project', 'aggregate real-time technologies') ON CONFLICT DO NOTHING;, parameters: None
+[2024-02-18T02:02:16.781+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:16.799+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T02:02:16.810+0000] {sql.py:450} INFO - Running statement: INSERT IGNORE INTO companies(name, catchPhrase, bs) VALUES ('Hoeger LLC','Centralized empowering task-force', 'target end-to-end models');, parameters: None
+[2024-02-18T02:02:16.812+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:16.835+0000] {base.py:83} INFO - Using connection ID 'postgres_connection' for task execution.
+[2024-02-18T02:02:16.842+0000] {sql.py:450} INFO - Running statement: INSERT INTO companies(name, catchPhrase, bs) VALUES ('Hoeger LLC','Centralized empowering task-force', 'target end-to-end models') ON CONFLICT DO NOTHING;, parameters: None
+[2024-02-18T02:02:16.845+0000] {sql.py:459} INFO - Rows affected: 1
+[2024-02-18T02:02:16.857+0000] {python.py:201} INFO - Done. Returned value was: None
+[2024-02-18T02:02:16.892+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=Read_and_load_of_API_to_MySQLDB, task_id=Load_companies_registers, execution_date=20240211T000000, start_date=20240218T020214, end_date=20240218T020216
+[2024-02-18T02:02:17.007+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-18T02:02:17.109+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,30 @@
+[2024-02-18T04:49:04.389+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL_From_an_API_to_MySQL_Postgres_and_Redis.cities_table_creation scheduled__2024-02-04T00:00:00+00:00 [queued]>
+[2024-02-18T04:49:04.430+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL_From_an_API_to_MySQL_Postgres_and_Redis.cities_table_creation scheduled__2024-02-04T00:00:00+00:00 [queued]>
+[2024-02-18T04:49:04.434+0000] {taskinstance.py:2170} INFO - Starting attempt 2 of 6
+[2024-02-18T04:49:04.518+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): cities_table_creation> on 2024-02-04 00:00:00+00:00
+[2024-02-18T04:49:04.527+0000] {standard_task_runner.py:60} INFO - Started process 6054 to run task
+[2024-02-18T04:49:04.548+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'ETL_From_an_API_to_MySQL_Postgres_and_Redis', 'cities_table_creation', 'scheduled__2024-02-04T00:00:00+00:00', '--job-id', '625', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmp25av7wfk']
+[2024-02-18T04:49:04.562+0000] {standard_task_runner.py:88} INFO - Job 625: Subtask cities_table_creation
+[2024-02-18T04:49:04.835+0000] {task_command.py:423} INFO - Running <TaskInstance: ETL_From_an_API_to_MySQL_Postgres_and_Redis.cities_table_creation scheduled__2024-02-04T00:00:00+00:00 [running]> on host 091c4b0f3ebe
+[2024-02-18T04:49:05.503+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='ETL_From_an_API_to_MySQL_Postgres_and_Redis' AIRFLOW_CTX_TASK_ID='cities_table_creation' AIRFLOW_CTX_EXECUTION_DATE='2024-02-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-02-04T00:00:00+00:00'
+[2024-02-18T04:49:05.713+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-18T04:49:05.819+0000] {sql.py:450} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS cities(
+              id INT AUTO_INCREMENT  PRIMARY KEY NOT NULL,
+              name VARCHAR(25) NOT NULL UNIQUE  
+            );
+
+           , parameters: None
+[2024-02-18T04:49:05.877+0000] {sql.py:459} INFO - Rows affected: 0
+[2024-02-18T04:49:05.920+0000] {base.py:83} INFO - Using connection ID 'postgres_connection' for task execution.
+[2024-02-18T04:49:05.946+0000] {sql.py:450} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS cities(
+              id BIGSERIAL PRIMARY KEY NOT NULL,
+              name VARCHAR(25) NOT NULL UNIQUE  
+            );
+
+           , parameters: None
+[2024-02-18T04:49:05.981+0000] {python.py:201} INFO - Done. Returned value was: None
+[2024-02-18T04:49:06.057+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=ETL_From_an_API_to_MySQL_Postgres_and_Redis, task_id=cities_table_creation, execution_date=20240204T000000, start_date=20240218T044904, end_date=20240218T044906
+[2024-02-18T04:49:06.186+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-18T04:49:06.564+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

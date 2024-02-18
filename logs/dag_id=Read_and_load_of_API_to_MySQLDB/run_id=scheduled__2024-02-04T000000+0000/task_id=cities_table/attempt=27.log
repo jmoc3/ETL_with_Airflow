@@ -1,0 +1,44 @@
+[2024-02-16T21:18:22.467+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.cities_table scheduled__2024-02-04T00:00:00+00:00 [queued]>
+[2024-02-16T21:18:22.490+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Read_and_load_of_API_to_MySQLDB.cities_table scheduled__2024-02-04T00:00:00+00:00 [queued]>
+[2024-02-16T21:18:22.491+0000] {taskinstance.py:2170} INFO - Starting attempt 27 of 32
+[2024-02-16T21:18:22.566+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): cities_table> on 2024-02-04 00:00:00+00:00
+[2024-02-16T21:18:22.588+0000] {standard_task_runner.py:60} INFO - Started process 271 to run task
+[2024-02-16T21:18:22.600+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'Read_and_load_of_API_to_MySQLDB', 'cities_table', 'scheduled__2024-02-04T00:00:00+00:00', '--job-id', '429', '--raw', '--subdir', 'DAGS_FOLDER/CRM.py', '--cfg-path', '/tmp/tmp2_vxt636']
+[2024-02-16T21:18:22.616+0000] {standard_task_runner.py:88} INFO - Job 429: Subtask cities_table
+[2024-02-16T21:18:23.018+0000] {task_command.py:423} INFO - Running <TaskInstance: Read_and_load_of_API_to_MySQLDB.cities_table scheduled__2024-02-04T00:00:00+00:00 [running]> on host a4160a6d775c
+[2024-02-16T21:18:23.477+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='jmoc' AIRFLOW_CTX_DAG_ID='Read_and_load_of_API_to_MySQLDB' AIRFLOW_CTX_TASK_ID='cities_table' AIRFLOW_CTX_EXECUTION_DATE='2024-02-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='27' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-02-04T00:00:00+00:00'
+[2024-02-16T21:18:23.513+0000] {base.py:83} INFO - Using connection ID 'mysql_connection' for task execution.
+[2024-02-16T21:18:23.647+0000] {sql.py:450} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS ***.cities(
+              id INT AUTO_INCREMENT  PRIMARY KEY NOT NULL,
+              name VARCHAR(25) NOT NULL UNIQUE  
+            );
+
+           , parameters: None
+[2024-02-16T21:18:23.675+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 241, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/CRM.py", line 41, in cities_table
+    mysql_hook.run(db.cities_c())
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 398, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 455, in _run_command
+    cur.execute(sql_statement)
+  File "/home/airflow/.local/lib/python3.8/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/home/airflow/.local/lib/python3.8/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+  File "/home/airflow/.local/lib/python3.8/site-packages/MySQLdb/connections.py", line 257, in query
+    _mysql.connection.query(self, query)
+MySQLdb.OperationalError: (1049, "Unknown database '***'")
+[2024-02-16T21:18:23.982+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=Read_and_load_of_API_to_MySQLDB, task_id=cities_table, execution_date=20240204T000000, start_date=20240216T211822, end_date=20240216T211823
+[2024-02-16T21:18:24.193+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 429 for task cities_table ((1049, "Unknown database '***'"); 271)
+[2024-02-16T21:18:24.232+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-02-16T21:18:24.489+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
